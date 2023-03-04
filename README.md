@@ -1,8 +1,14 @@
-# Guide to configure the basics
+# Minesweeper
+
+Using a Model–view–controller (MVC) in Java 17.
+
+[toc]
+
+## Guide to configure the basics
 
 To facilitate the debugging of the project, we will include a series of dependencies.
 
-## ¿Why?
+### ¿Why?
 
 Not always we want to see the `system.print.err` in the console.
 
@@ -29,7 +35,7 @@ process.
 
 As you can see, right now we print with a level control, also we know where the call was made and so on.
 
-## Setup with Maven
+### Setup with Maven
 
 Once we created our basic project, we will add the dependency to the `pom.xml` file.
 
@@ -48,9 +54,9 @@ Once we created our basic project, we will add the dependency to the `pom.xml` f
 ```
 
 > Be aware, that versions bump from time to time, so you should check the latest version.
-> https://mvnrepository.com/artifact/org.apache.logging.log4j
+> <https://mvnrepository.com/artifact/org.apache.logging.log4j>
 
-## Create a basic configuration file
+### Create a basic configuration file
 
 We will create a file called `log4j2.xml` in the `src/main/resources` folder.
 
@@ -84,7 +90,7 @@ Just to explain a little:
 - The file name is the name of the file, and the date format is the date format of the file.
 - The immediate flush is to flush the file immediately, and to append is to append the file or not.
 
-## Configure the logger to work in release mode or debug mode
+### Configure the logger to work in release mode or debug mode
 
 We need to read the arguments as we launch it.
 
@@ -107,7 +113,7 @@ I'm using the standard _UNIX_ arguments, but you can use whatever you want.
 
 > At the same time, please follow POSIX standards... don't be a d...
 
-## Use the logger
+### Use the logger
 
 In each class, we need to declare a funtion to get the logger.
 
@@ -125,3 +131,76 @@ public class Main {
   }
 }
 ```
+
+## Configuring prettier for code style improvements
+
+We are going to use [prettier](https://prettier.io/) to improve the code style across the project.
+
+### Configuring prettier with Maven
+
+We need to add the dependency to the `pom.xml` file at the plugins section.
+
+```xml
+<plugin>
+    <groupId>com.hubspot.maven.plugins</groupId>
+    <artifactId>prettier-maven-plugin</artifactId>
+    <!-- Find the latest version at https://github.com/jhipster/prettier-java/releases -->
+    <version>2.0</version>
+</plugin>
+```
+
+#### In case npm is not installed properly
+
+You need to install npm and nodejs, and then run the following command:
+
+```bash
+ npm install --save-dev --save-exact prettier
+ npm install --save-dev --save-exact prettier-plugin-java
+```
+
+### Create a basic config for prettier
+
+You need to create a file called `.prettierrc` in the root of the project.
+
+This will be used to configure the code style.
+
+```json
+{
+    "printWidth": 120,
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "overrides": [
+        {
+            "files": "*.java",
+            "options": {
+                "parser": "java"
+            }
+        }
+    ]
+}
+```
+
+Also, you can create a file called `.prettierignore` in the root of the project.
+
+## Git
+
+As we are using some crap that we don't want on git, dont forget to exclude it.
+
+```ignore
+# At least ignore this folders
+target
+log
+node_modules
+```
+
+> Plase, DO NOT IGNORE ALL `.idea` folder as is designed to be shared and could be helpful for other developers.
+
+You can create a `.gitignore` more specific for your project with this tool:
+
+[gitignore.io - Create useful .gitignore files for your project
+](https://www.toptal.com/developers/gitignore)

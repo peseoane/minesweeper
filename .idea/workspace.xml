@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0.">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/2_Configuring_log4j.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/3_Configuring_prettier.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/3_Git.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Documentation updated.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/jekyll-gh-pages.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daw/pr/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daw/pr/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3_Configuring_prettier.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_Configuring_prettier.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3_Git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_Git.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -140,7 +137,7 @@
       <workItem from="1677965523068" duration="23000" />
       <workItem from="1677965553783" duration="103000" />
       <workItem from="1677965664851" duration="702000" />
-      <workItem from="1677966692781" duration="3596000" />
+      <workItem from="1677966692781" duration="4126000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -156,17 +153,44 @@
       <option name="project" value="LOCAL" />
       <updated>1677968062208</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Prettier was added to the project.">
+      <created>1677970342525</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677970342525</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Documentation updated.">
+      <created>1677970353799</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677970353799</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="migrated old structure to log4j2." />
     <MESSAGE value="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0." />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0." />
+    <MESSAGE value="Prettier was added to the project." />
+    <MESSAGE value="Documentation updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation updated." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
