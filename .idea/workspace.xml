@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Initial archtype">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2-debug.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="migrated old structure to log4j2.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application-20230304.log" beforeDir="false" afterPath="$PROJECT_DIR$/application-20230304.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application-20230304.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daw/pr/minesweeper/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daw/pr/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2-debug.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,15 @@
       <recent name="C:\git\minesweeper\src\main\resources" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn display-dependecy-updates" />
+      <command value=" mvn release:update-versions -DautoVersionSubmodules=true " />
+      <command value="mvn mvn release:update-versions -DautoVersionSubmodules=true " />
+      <command value="mvn release:update-versions -DautoVersionSubmodules=true " />
+      <command value="mvn release:update-versions " />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
@@ -121,8 +128,16 @@
       <workItem from="1677965523068" duration="23000" />
       <workItem from="1677965553783" duration="103000" />
       <workItem from="1677965664851" duration="702000" />
-      <workItem from="1677966692781" duration="374000" />
+      <workItem from="1677966692781" duration="1333000" />
     </task>
+    <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
+      <created>1677967147176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677967147176</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +145,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="migrated old structure to log4j2." />
+    <option name="LAST_COMMIT_MESSAGE" value="migrated old structure to log4j2." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
