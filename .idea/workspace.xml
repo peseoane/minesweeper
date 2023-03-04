@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Documentation updated.">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/jekyll-gh-pages.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3_Configuring_prettier.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_Configuring_prettier.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3_Git.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3_Git.md" afterDir="false" />
-    </list>
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Documentation merged to README.md because there is no need for split docs." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +130,7 @@
       <workItem from="1677965523068" duration="23000" />
       <workItem from="1677965553783" duration="103000" />
       <workItem from="1677965664851" duration="702000" />
-      <workItem from="1677966692781" duration="4126000" />
+      <workItem from="1677966692781" duration="4777000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -167,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677970353799</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Documentation merged to README.md because there is no need for split docs.">
+      <created>1677970889104</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677970889104</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +190,8 @@
     <MESSAGE value="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0." />
     <MESSAGE value="Prettier was added to the project." />
     <MESSAGE value="Documentation updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentation updated." />
+    <MESSAGE value="Documentation merged to README.md because there is no need for split docs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation merged to README.md because there is no need for split docs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
