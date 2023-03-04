@@ -1,4 +1,4 @@
-package daw.pr.minesweeper;
+package daw.pr;
 
 import static org.junit.Assert.assertTrue;
 
