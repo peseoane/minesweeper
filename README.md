@@ -61,20 +61,27 @@ Once we created our basic project, we will add the dependency to the `pom.xml` f
 We will create a file called `log4j2.xml` in the `src/main/resources` folder.
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Configuration status="INFO">
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
         </Console>
-        <File name="FileAppender" fileName="application-${date:yyyyMMdd}.log" immediateFlush="false" append="true">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <File
+            name="FileAppender"
+            fileName="application-${date:yyyyMMdd}.log"
+            immediateFlush="false"
+            append="true"
+        >
+            <PatternLayout
+                pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+            />
         </File>
     </Appenders>
     <Loggers>
         <Root level="error">
-            <AppenderRef ref="ConsoleAppender"/>
-            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
         </Root>
     </Loggers>
 </Configuration>
@@ -82,13 +89,13 @@ We will create a file called `log4j2.xml` in the `src/main/resources` folder.
 
 Just to explain a little:
 
-- We have two appenders, one for the console and one for the file.
-- We have a logger, that will be the root logger, we will change this for debug in the classes with arguments, that my
-  approach.
-- The root logger will have the level `error` and will use the two appenders.
-- The pattern layout is the format of the log.
-- The file name is the name of the file, and the date format is the date format of the file.
-- The immediate flush is to flush the file immediately, and to append is to append the file or not.
+-   We have two appenders, one for the console and one for the file.
+-   We have a logger, that will be the root logger, we will change this for debug in the classes with arguments, that my
+    approach.
+-   The root logger will have the level `error` and will use the two appenders.
+-   The pattern layout is the format of the log.
+-   The file name is the name of the file, and the date format is the date format of the file.
+-   The immediate flush is to flush the file immediately, and to append is to append the file or not.
 
 ### Configure the logger to work in release mode or debug mode
 
@@ -124,12 +131,13 @@ Not always is the content root class the one that we want to print.
 ```java
 public class Main {
 
-  private static final Logger logger = LogManager.getLogger(Main.class);
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
-  public static void main(String[] args) {
-    logger.info("Using logger in the Main class");
-  }
+    public static void main(String[] args) {
+        logger.info("Using logger in the Main class");
+    }
 }
+
 ```
 
 ## Configuring prettier for code style improvements
