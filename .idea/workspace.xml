@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Doc fix.">
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Reordered static classes of logges.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
       <workItem from="1678299819133" duration="958000" />
       <workItem from="1678385106296" duration="7000" />
       <workItem from="1679416486868" duration="96000" />
-      <workItem from="1679936580273" duration="577000" />
+      <workItem from="1679936580273" duration="1247000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -210,7 +206,28 @@
       <option name="project" value="LOCAL" />
       <updated>1678043882835</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="requirements.md written (fron marey)">
+      <created>1679937260430</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679937260430</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)">
+      <created>1679937300005</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679937300005</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Reordered static classes of logges.">
+      <created>1679937319032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679937319032</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +253,10 @@
     <MESSAGE value="Documentation merged to README.md because there is no need for split docs." />
     <MESSAGE value="¿Idea crap? Why not... push" />
     <MESSAGE value="Doc fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doc fix." />
+    <MESSAGE value="requirements.md written (fron marey)" />
+    <MESSAGE value="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)" />
+    <MESSAGE value="Reordered static classes of logges." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reordered static classes of logges." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
