@@ -1,6 +1,5 @@
 package daw.pr.minesweeper;
 
-import daw.pr.minesweeper.struct.Cell;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,6 +8,12 @@ import org.apache.logging.log4j.core.config.Configurator;
 public class App {
 
     private static final Logger logger = LogManager.getLogger(App.class);
+
+    private static void logSystemInfo() {
+        logger.info("Java System Properties:");
+        System.getProperties().forEach((k, v) -> logger.info(k + " = " + v));
+        logger.info("End of Java System Properties");
+    }
 
     public static void main(String[] args) {
         // Check if the String[] args contains the debug flag (--debug or -d)
@@ -31,13 +36,5 @@ public class App {
         logger.info("Starting Minesweeper");
 
         logSystemInfo();
-        logger.error("Error message");
-
-    }
-
-    private static void logSystemInfo() {
-        logger.info("Java System Properties:");
-        System.getProperties().forEach((k, v) -> logger.info(k + " = " + v));
-        logger.info("End of Java System Properties");
     }
 }
