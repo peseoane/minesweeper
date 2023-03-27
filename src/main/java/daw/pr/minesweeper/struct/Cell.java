@@ -2,18 +2,17 @@ package daw.pr.minesweeper.struct;
 
 public class Cell {
 
-    private boolean hasBeenRevealed;
-    private boolean hasBeenFlagged;
-    private boolean hasBeenMarked;
+    private State state;
+    private Difficulty difficulty;
 
     /**
      * Crea una celda
-     * @param int difficulty de 0 a 3
+     *
+     * @param int Difficulty de 0 a 3
      */
-    public Cell(int difficulty) {
-        this.hasBeenRevealed = false;
-        this.hasBeenFlagged = false;
-        this.hasBeenMarked = false;
+    public Cell(Difficulty difficulty) {
+        this.state = State.HIDDEN;
+        this.difficulty = difficulty;
     }
 
 }
