@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Basic POO(1..*) cell structure implemented.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Gameplay.java" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Idea config changed to allow code rearrange.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/StateSelf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.md" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/StateCanvas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -170,7 +169,7 @@
       <workItem from="1678385106296" duration="7000" />
       <workItem from="1679416486868" duration="96000" />
       <workItem from="1679936580273" duration="3178000" />
-      <workItem from="1680024370677" duration="1398000" />
+      <workItem from="1680024370677" duration="1775000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -277,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679939157230</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Basic composition of classes, still has a flaw (States aren't complete).">
+      <created>1680025891950</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680025891950</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Idea config changed to allow code rearrange.">
+      <created>1680025921164</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680025921164</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +324,9 @@
     <MESSAGE value="Cells will be constructed via two Enums as a primary source for the logic basis." />
     <MESSAGE value="Removed obsolete JavaDoc." />
     <MESSAGE value="Basic POO(1..*) cell structure implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic POO(1..*) cell structure implemented." />
+    <MESSAGE value="Basic composition of classes, still has a flaw (States aren't complete)." />
+    <MESSAGE value="Idea config changed to allow code rearrange." />
+    <option name="LAST_COMMIT_MESSAGE" value="Idea config changed to allow code rearrange." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
