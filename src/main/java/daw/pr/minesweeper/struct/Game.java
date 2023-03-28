@@ -20,10 +20,10 @@ public class Game {
             int row = (int) (Math.random() * difficulty.getRows());
             int column = (int) (Math.random() * difficulty.getColumns());
 
-            if (cells[row][column].getState() == State.MINE) {
+            if (cells[row][column].getStateSelf() == StateSelf.MINE) {
                 i--;
             } else {
-                cells[row][column] = new Cell(State.MINE);
+                cells[row][column] = new Cell(StateSelf.MINE);
             }
         }
     }

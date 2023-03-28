@@ -2,22 +2,34 @@ package daw.pr.minesweeper.struct;
 
 public class Cell implements Gameplay {
 
-    private State state;
+    private StateCanvas stateCanvas;
+
+    public StateCanvas getStateCanvas() {
+        return stateCanvas;
+    }
+
+    public void setStateCanvas(StateCanvas stateCanvas) {
+        this.stateCanvas = stateCanvas;
+    }
+
+    public StateSelf getStateSelf() {
+        return stateSelf;
+    }
+
+    public void setStateSelf(StateSelf stateSelf) {
+        this.stateSelf = stateSelf;
+    }
+
+    private StateSelf stateSelf;
 
     public Cell() {
-        this.state = State.HIDDEN;
+        this.stateCanvas = StateCanvas.HIDDEN;
+        this.stateSelf = StateSelf.CLEAR;
     }
 
-    public Cell(State state) {
-        this.state = state;
+    public Cell(StateSelf stateSelf) {
+        this.stateSelf = stateSelf;
     }
 
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
 
 }
