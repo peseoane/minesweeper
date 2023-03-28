@@ -19,11 +19,14 @@ player must find the cells where the mines are hidden.
 
 A cell can be in one of three different states:
 
-- **Covered**: This is the initial state of the cell, and in this state, the player does not know whether there is a
+- **Covered**: This is the initial stateCanvas of the cell, and in this stateCanvas, the player does not know whether
+  there is a
   hidden mine in the cell or not.
-- **Marked**: This state is the same as the previous one, but the player has marked the cell to indicate that they think
+- **Marked**: This stateCanvas is the same as the previous one, but the player has marked the cell to indicate that they
+  think
   there is a mine in that cell.
-- **Uncovered**: If the player opens the cell, it enters this state. If there is a mine in the cell, opening the cell
+- **Uncovered**: If the player opens the cell, it enters this stateCanvas. If there is a mine in the cell, opening the
+  cell
   will automatically result in losing the game. If there is no mine, the game will show the player how many mines are in
   the adjacent cells. To make the game easier, if the number of adjacent cells is zero, the game will automatically open
   all the adjacent cells that are not yet uncovered, as we know for sure that there are no mines in them (this
@@ -41,7 +44,8 @@ The implementation of the game will be based on the following two classes:
 This class implements a cell on the board and will include the following attributes:
 
 - `mined`: A boolean that indicates whether the cell contains a mine or not.
-- `state`: An integer that indicates the state of the cell. Three constants will be defined in this class to represent
+- `stateCanvas`: An integer that indicates the stateCanvas of the cell. Three constants will be defined in this class to
+  represent
   the different states: `Covered` (1), `Marked` (2), and `Uncovered` (3).
 - `row`: The number of the row where the cell is placed.
 - `column`: The number of the column where the cell is placed.
@@ -69,7 +73,7 @@ The `Game` class also includes the following methods:
 classDiagram	
     class Cell {
         -mined: boolean
-        -state: int
+        -stateCanvas: int
         -row: int
         -column: int
         +getCell(row: int, column: int): Cell
