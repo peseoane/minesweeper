@@ -20,19 +20,22 @@ public class Game implements debug {
     }
 
     private void fillMines(Difficulty difficulty) {
-        for (int i = 0; i < difficulty.getMines(); i++) {
+        int remainingMines = difficulty.getMines();
+        while (remainingMines > 0) {
+            for (Cell[] row : cells) {
+                for (Cell cell : row) {
 
-            int remeaningMines = difficulty.getMines();
-
-            for (int row = 0; row < difficulty.getRows(); row++) {
-                for (int column = 0; column < difficulty.getColumns(); column++) {
-                    if (remeaningMines > 0 && Math.random() * 100 < 5) {
-                        cells[row][column].setStateSelf(StateSelf.MINE);
-                        remeaningMines--;
+                    if (remainingMines > 0) {
+                        cell.setStateSelf(StateSelf.MINE);
+                        remainingMines--;
+                        if (remainingMines == 0) {
+                            break; // salir del bucle for
+                        }
                     }
                 }
             }
         }
+
 
     }
 
