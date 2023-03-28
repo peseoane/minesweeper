@@ -1,18 +1,36 @@
 package daw.pr.minesweeper.struct;
 
+import java.util.Arrays;
+
 public class Game {
 
-    private Cell cells[][];
-    private Difficulty difficulty;
+    private final Cell[][] cells;
+    private final Difficulty difficulty;
 
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
-        for (int i = 0; i < difficulty.getRows(); i++) {
-            for (int j = 0; j < difficulty.getColumns(); j++) {
-                this.cells[i][j] = new Cell(difficulty);
+
+        fillHidden();
+        fillMines(difficulty);
+    }
+
+    private void fillMines(Difficulty difficulty) {
+        for (int i = 0; i < difficulty.getMines(); i++) {
+            int row = (int) (Math.random() * difficulty.getRows());
+            int column = (int) (Math.random() * difficulty.getColumns());
+
+            if (cells[row][column].getState() == State.MINE) {
+                i--;
+            } else {
+                cells[row][column] = new Cell(State.MINE);
             }
         }
     }
 
+    private void fillHidden() {
+        for (Cell[] row : cells) {
+            Arrays.fill(row, new Cell());
+        }
+    }
 }
