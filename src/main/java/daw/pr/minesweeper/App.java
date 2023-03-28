@@ -1,5 +1,7 @@
 package daw.pr.minesweeper;
 
+import daw.pr.minesweeper.struct.Difficulty;
+import daw.pr.minesweeper.struct.Game;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,5 +38,10 @@ public class App {
         logger.info("Starting Minesweeper");
 
         logSystemInfo();
+
+        Game game = new Game(Difficulty.EASY);
+        System.out.println(game);
+
+
     }
 }

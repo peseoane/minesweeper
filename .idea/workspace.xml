@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Idea config changed to allow code rearrange.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/StateSelf.java" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="IdeaJ config.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.md" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/StateCanvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Gameplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -169,7 +168,7 @@
       <workItem from="1678385106296" duration="7000" />
       <workItem from="1679416486868" duration="96000" />
       <workItem from="1679936580273" duration="3178000" />
-      <workItem from="1680024370677" duration="1775000" />
+      <workItem from="1680024370677" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -290,7 +289,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680025921164</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Now cells can be drawn in 3 ways and also had states but without mixing.">
+      <created>1680026199964</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680026199964</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update docs due to refactor.">
+      <created>1680026222175</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680026222175</updated>
+    </task>
+    <task id="LOCAL-00020" summary="IdeaJ config.">
+      <created>1680026229039</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680026229039</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +346,10 @@
     <MESSAGE value="Basic POO(1..*) cell structure implemented." />
     <MESSAGE value="Basic composition of classes, still has a flaw (States aren't complete)." />
     <MESSAGE value="Idea config changed to allow code rearrange." />
-    <option name="LAST_COMMIT_MESSAGE" value="Idea config changed to allow code rearrange." />
+    <MESSAGE value="Now cells can be drawn in 3 ways and also had states but without mixing." />
+    <MESSAGE value="Update docs due to refactor." />
+    <MESSAGE value="IdeaJ config." />
+    <option name="LAST_COMMIT_MESSAGE" value="IdeaJ config." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
