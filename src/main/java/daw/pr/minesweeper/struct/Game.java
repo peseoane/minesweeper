@@ -6,9 +6,8 @@ import org.apache.logging.log4j.Logger;
 public class Game implements debug {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
-
-    private final Cell[][] cells;
     private final Difficulty difficulty;
+    private final Cell[][] cells;
 
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
@@ -20,22 +19,22 @@ public class Game implements debug {
     private void fillMines(Difficulty difficulty) {
         int contador = 0;
         int remainingMines = difficulty.getMines();
-        for (Cell[] row : cells) {
-            for (Cell cell : row) {
 
-                if (remainingMines > 0) {
-                    cell.setStateSelf(StateSelf.MINE);
-                    remainingMines--;
-                } else {
-                    break;
-                }
-
-                if (logger.isDebugEnabled()) {
-                    logger.debug("Cell: " + contador + " - " + cell);
-                    contador++;
+        while (remainingMines > 0) {
+            for (int i = 0; i < difficulty.getColumns(); i++) {
+                for (int j = 0; j < difficulty.getRows(); j++) {
+                    if (remainingMines > 0 && Math.random() < 0.1) {
+                        cells[i][j].setStateSelf(StateSelf.MINE);
+                        remainingMines--;
+                    }
+                    if (logger.isDebugEnabled()) {
+                        logger.debug("Cell: " + contador + " - " + cells[i][j]);
+                        contador++;
+                    }
                 }
             }
         }
+
     }
 
     private void fillHidden() {
