@@ -39,11 +39,6 @@ public class Game implements debug {
     }
 
     private void fillHidden() {
-        /*
-        for (Cell[] row : cells) {
-            Arrays.fill(row, new Cell());
-        }*/
-
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
@@ -52,7 +47,6 @@ public class Game implements debug {
                 }
             }
         }
-
     }
 
     @Override

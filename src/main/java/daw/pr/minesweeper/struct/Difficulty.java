@@ -2,7 +2,7 @@ package daw.pr.minesweeper.struct;
 
 public enum Difficulty {
 
-    EASY(6, 6, 4),
+    EASY(6, 6, 6),
     MEDIUM(16, 16, 40),
     HARD(16, 30, 99);
     // CUSTOM(0, 0, 0);
