@@ -7,6 +7,8 @@ public class Cell implements debug {
 
     private static final Logger logger = LogManager.getLogger(Cell.class);
 
+    private int[] position;
+
     private StateCanvas stateCanvas;
     private StateSelf stateSelf;
 
@@ -34,6 +36,22 @@ public class Cell implements debug {
 
     public void setStateSelf(StateSelf stateSelf) {
         this.stateSelf = stateSelf;
+    }
+
+    public int[] getPosition() {
+        return position;
+    }
+
+    public int getRow() {
+        return position[0];
+    }
+
+    public int getColumn() {
+        return position[1];
+    }
+
+    public void setPosition(int[] position) {
+        this.position = position;
     }
 
     @Override
