@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="WIP: filling Cells.">
+      <change afterPath="$PROJECT_DIR$/.attach_pid12464" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
@@ -70,7 +71,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "code.cleanup.on.save": "true",
-    "last_opened_file_path": "C:/git/minesweeper/src/main/resources",
+    "last_opened_file_path": "/media/DIURNO/git/minesweeper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -166,6 +167,7 @@
       <workItem from="1679416486868" duration="96000" />
       <workItem from="1679936580273" duration="3178000" />
       <workItem from="1680024370677" duration="4853000" />
+      <workItem from="1680070721347" duration="3703000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -363,6 +365,15 @@
           <properties class="java.lang.NoSuchFieldError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
+          <line>49</line>
+          <properties class="daw.pr.minesweeper.struct.Game" method="toString">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

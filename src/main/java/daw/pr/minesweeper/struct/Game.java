@@ -3,8 +3,6 @@ package daw.pr.minesweeper.struct;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
-
 public class Game implements debug {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
@@ -20,29 +18,41 @@ public class Game implements debug {
     }
 
     private void fillMines(Difficulty difficulty) {
+        int contador = 0;
         int remainingMines = difficulty.getMines();
-        while (remainingMines > 0) {
-            for (Cell[] row : cells) {
-                for (Cell cell : row) {
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
 
-                    if (remainingMines > 0) {
-                        cell.setStateSelf(StateSelf.MINE);
-                        remainingMines--;
-                        if (remainingMines == 0) {
-                            break; // salir del bucle for
-                        }
-                    }
+                if (remainingMines > 0) {
+                    cell.setStateSelf(StateSelf.MINE);
+                    remainingMines--;
+                } else {
+                    break;
+                }
+
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Cell: " + contador + " - " + cell);
+                    contador++;
+                }
+            }
+        }
+    }
+
+    private void fillHidden() {
+        /*
+        for (Cell[] row : cells) {
+            Arrays.fill(row, new Cell());
+        }*/
+
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                cells[i][j] = new Cell();
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
             }
         }
 
-
-    }
-
-    private void fillHidden() {
-        for (Cell[] row : cells) {
-            Arrays.fill(row, new Cell());
-        }
     }
 
     @Override
@@ -52,15 +62,13 @@ public class Game implements debug {
         sb.append("Game{").append("cells=\n");
 
         for (Cell[] row : cells) {
-            sb.append("    ");
             for (Cell cell : row) {
-                sb.append(cell.getStateSelf()).append(" ");
+                sb.append(" ").append(cell.getStateSelf());
             }
             sb.append("\n");
         }
         sb.append("    }").append(", difficulty=").append(difficulty).append('}');
         return sb.toString();
-
     }
-
 }
+
