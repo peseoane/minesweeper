@@ -6,9 +6,8 @@ import org.apache.logging.log4j.Logger;
 public class Cell implements debug {
 
     private static final Logger logger = LogManager.getLogger(Cell.class);
-
+    private int offset = 0;
     private int[] position;
-
     private StateCanvas stateCanvas;
     private StateSelf stateSelf;
 
@@ -20,6 +19,14 @@ public class Cell implements debug {
     public Cell(StateSelf stateSelf) {
         this.stateCanvas = StateCanvas.HIDDEN;
         this.stateSelf = stateSelf;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 
     public StateCanvas getStateCanvas() {
@@ -42,16 +49,16 @@ public class Cell implements debug {
         return position;
     }
 
+    public void setPosition(int[] position) {
+        this.position = position;
+    }
+
     public int getRow() {
         return position[0];
     }
 
     public int getColumn() {
         return position[1];
-    }
-
-    public void setPosition(int[] position) {
-        this.position = position;
     }
 
     @Override

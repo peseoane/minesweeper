@@ -96,14 +96,21 @@ public class Game implements debug {
                 {1, - 1}, {1, 0}, {1, 1}
         };
 
-        for (int[] offset : offsets) {
-            int x = cell.getRow() + offset[0];
-            int y = cell.getColumn() + offset[1];
 
-            if (isValidCell(x, y)) {
-                adjacentCells.add(getCell(x, y));
-                System.out.println("x: " + x + " y: " + y);
+        if (cell.getOffset() < offsets.length) {
+            int x_offset = offsets[cell.getOffset()][0];
+            int y_offset = offsets[cell.getOffset()][1];
+
+            if (isValidCell(cell.getRow() + x_offset, cell.getColumn() + y_offset)) {
+                adjacentCells.add(getCell(cell.getRow() + x_offset, cell.getColumn() + y_offset));
+                logger.debug("x: " + cell.getRow() + " y: " + cell.getColumn() + " x_offset: " + x_offset + " " +
+                                     "y_offset: " + y_offset);
             }
+            cell.setOffset(cell.getOffset() + 1);
+            getAdjacentCells(cell);
+        } else {
+            cell.setOffset(0);
+            logger.debug("Se ha terminado de buscar celdas adyacentes y se ha reiniciado el offset");
         }
 
         return adjacentCells;

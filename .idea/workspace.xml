@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Neighbors cells working but without a recursive way.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Neighbors cells working but without a recursive way II">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +166,7 @@
       <workItem from="1680112369007" duration="1451000" />
       <workItem from="1680113829024" duration="48000" />
       <workItem from="1680114767640" duration="3440000" />
-      <workItem from="1680370596280" duration="730000" />
+      <workItem from="1680370596280" duration="2268000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -335,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680121071900</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Neighbors cells working but without a recursive way II">
+      <created>1680371655658</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680371655658</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +374,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="migrated old structure to log4j2." />
     <MESSAGE value="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0." />
     <MESSAGE value="Prettier was added to the project." />
     <MESSAGE value="Documentation updated." />
@@ -391,7 +398,8 @@
     <MESSAGE value="Neighbourds" />
     <MESSAGE value="Neighbours" />
     <MESSAGE value="Neighbors cells working but without a recursive way." />
-    <option name="LAST_COMMIT_MESSAGE" value="Neighbors cells working but without a recursive way." />
+    <MESSAGE value="Neighbors cells working but without a recursive way II" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neighbors cells working but without a recursive way II" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -399,6 +407,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NoSuchFieldError" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
