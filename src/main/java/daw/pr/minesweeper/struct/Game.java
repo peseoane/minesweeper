@@ -72,31 +72,43 @@ public class Game implements debug {
     public ArrayList<Cell> getAdjacentCells(Cell cell) {
         ArrayList<Cell> adjacentCells = new ArrayList<>();
 
+        // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
+        // same thing
         final int[][] offsets = {
                 {- 1, - 1}, {- 1, 0}, {- 1, 1},
                 {0, - 1}, {0, 1},
                 {1, - 1}, {1, 0}, {1, 1}
         };
 
-
         if (cell.getOffset() < offsets.length) {
+
             int x_offset = offsets[cell.getOffset()][0];
             int y_offset = offsets[cell.getOffset()][1];
 
-            if (isValidCell(cell.getRow() + x_offset, cell.getColumn() + y_offset)) {
-                adjacentCells.add(getCell(cell.getRow() + x_offset, cell.getColumn() + y_offset));
-                logger.debug("x: " + cell.getRow() + " y: " + cell.getColumn() + " x_offset: " + x_offset + " " +
-                                     "y_offset: " + y_offset);
+            int x = cell.getRow() + x_offset;
+            int y = cell.getColumn() + y_offset;
+
+            // Check if the adjacent cell is a valid cell
+            if (isValidCell(x, y)) {
+                // Add the adjacent cell to the list of adjacent cells
+                adjacentCells.add(getCell(x, y));
+                logger.debug("Cell: " + x + " - " + y + " - " + getCell(x, y));
             }
+
+            // Next query will be for the next position of the offset
             cell.setOffset(cell.getOffset() + 1);
-            getAdjacentCells(cell);
+
+            // Recursively call
+            adjacentCells.addAll(getAdjacentCells(cell));
         } else {
+            // Reset the offset... this is ugly, but it works
             cell.setOffset(0);
-            logger.debug("Se ha terminado de buscar celdas adyacentes y se ha reiniciado el offset");
         }
 
+        // Return the list of adjacent cells found so far
         return adjacentCells;
     }
+
 
     private boolean isValidCell(int x, int y) {
         // verifica si la celda está dentro del tablero
