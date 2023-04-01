@@ -16,6 +16,21 @@ public class Game implements debug {
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
         fillHidden();
         fillMines(difficulty);
+        calculateNumbers();
+        printGame();
+    }
+
+    private void printGame() {
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                if (cell.getStateSelf() == StateSelf.MINE) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print(cell.getMinesAround() + " ");
+                }
+            }
+            System.out.println();
+        }
     }
 
     private void fillMines(Difficulty difficulty) {
@@ -199,5 +214,15 @@ public class Game implements debug {
             }
         }
         logger.debug("Cells revealed");
+    }
+
+    public void calculateNumbers() {
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                // Count the number of adjacent mines
+                cell.setMinesAround(getAdjacentMines(cell).size());
+                logger.info("Number of mines around: " + cell.getMinesAround());
+            }
+        }
     }
 }

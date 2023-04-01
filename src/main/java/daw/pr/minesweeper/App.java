@@ -40,11 +40,11 @@ public class App {
         logSystemInfo();
 
         Game game = new Game(Difficulty.EASY);
+        
+    }
 
-        game.getAdjacentCells(game.getCell(0, 0));
-        game.getAdjacentMines(game.getCell(0, 0));
-        System.out.println(game);
-
+    public void calculateNumbers() {
 
     }
+
 }

@@ -10,6 +10,7 @@ public class Cell implements debug {
     private int[] position;
     private StateCanvas stateCanvas;
     private StateSelf stateSelf;
+    private int minesAround = 0;
 
     public Cell() {
         this.stateCanvas = StateCanvas.HIDDEN;
@@ -19,6 +20,14 @@ public class Cell implements debug {
     public Cell(StateSelf stateSelf) {
         this.stateCanvas = StateCanvas.HIDDEN;
         this.stateSelf = stateSelf;
+    }
+
+    public int getMinesAround() {
+        return minesAround;
+    }
+
+    public void setMinesAround(int minesAround) {
+        this.minesAround = minesAround;
     }
 
     public int getOffset() {
@@ -70,5 +79,4 @@ public class Cell implements debug {
     public String toString() {
         return "Cell{" + "stateCanvas=" + stateCanvas + ", stateSelf=" + stateSelf + '}';
     }
-
 }
