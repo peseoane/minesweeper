@@ -69,6 +69,14 @@ public class Game implements debug {
         return cells[row][column];
     }
 
+    /**
+     * This function uses an array of offsets accessible through an index contained in the offset object. This allows
+     * to recursively query in each iteration the adjacent cells and without using an argument to move to the next
+     * iteration.
+     *
+     * @param cell the cell to query the neighbors cells
+     * @return all valid adjacent cells
+     */
     public ArrayList<Cell> getAdjacentCells(Cell cell) {
         ArrayList<Cell> adjacentCells = new ArrayList<>();
 

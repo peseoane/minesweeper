@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Old code removed.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Recursive method was refactored fue to inefficiency. No more list copies.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,7 @@
       <workItem from="1680112369007" duration="1451000" />
       <workItem from="1680113829024" duration="48000" />
       <workItem from="1680114767640" duration="3440000" />
-      <workItem from="1680370596280" duration="3022000" />
+      <workItem from="1680370596280" duration="3725000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -356,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680373175440</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Recursive method was refactored fue to inefficiency. No more list copies.">
+      <created>1680373838139</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373838139</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +393,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Documentation updated." />
     <MESSAGE value="Documentation merged to README.md because there is no need for split docs." />
     <MESSAGE value="¿Idea crap? Why not... push" />
     <MESSAGE value="Doc fix." />
@@ -412,7 +417,8 @@
     <MESSAGE value="Neighbors cells working but without a recursive way II" />
     <MESSAGE value="Recursive method was created and tested." />
     <MESSAGE value="Old code removed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Old code removed." />
+    <MESSAGE value="Recursive method was refactored fue to inefficiency. No more list copies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Recursive method was refactored fue to inefficiency. No more list copies." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
