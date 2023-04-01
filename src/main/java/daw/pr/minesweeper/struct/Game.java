@@ -69,24 +69,6 @@ public class Game implements debug {
         return cells[row][column];
     }
 
-    /*
-    public ArrayList<Cell> getAdjacentCells(Cell cell) {
-        ArrayList<Cell> adjacentCells = new ArrayList<Cell>();
-        int x = cell.getRow();
-        int y = cell.getColumn();
-
-        for (int i = - 1; i <= 1; i++) {
-            for (int j = - 1; j <= 1; j++) {
-                if (isValidCell(x + i, y + j)) {
-                    adjacentCells.add(getCell(x + i, y + j));
-                }
-            }
-        }
-
-        return adjacentCells;
-    }
-    */
-
     public ArrayList<Cell> getAdjacentCells(Cell cell) {
         ArrayList<Cell> adjacentCells = new ArrayList<>();
 
