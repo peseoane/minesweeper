@@ -83,13 +83,17 @@ public class Game implements debug {
         // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1}, {- 1, 0}, {- 1, 1},
-                {0, - 1}, {0, 1},
-                {1, - 1}, {1, 0}, {1, 1}
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
-
             int x_offset = offsets[cell.getOffset()][0];
             int y_offset = offsets[cell.getOffset()][1];
 
@@ -117,10 +121,83 @@ public class Game implements debug {
         return adjacentCells;
     }
 
-
     private boolean isValidCell(int x, int y) {
         // verifica si la celda está dentro del tablero
         return x >= 0 && x < difficulty.getRows() && y >= 0 && y < difficulty.getColumns();
     }
 
+    public ArrayList<Cell> getAdjacentMines(Cell cell) {
+        ArrayList<Cell> adjacentMines = new ArrayList<>();
+
+        // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
+        // same thing
+        final int[][] offsets = {
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
+        };
+
+        if (cell.getOffset() < offsets.length) {
+            int x_offset = offsets[cell.getOffset()][0];
+            int y_offset = offsets[cell.getOffset()][1];
+
+            int x = cell.getRow() + x_offset;
+            int y = cell.getColumn() + y_offset;
+
+            // Check if the adjacent cell is a valid cell
+            // This code is UNSAFE due to a possible null pointer exception
+
+            try {
+                if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
+                    // Add the adjacent cell to the list of adjacent cells
+                    adjacentMines.add(getCell(x, y));
+                    logger.debug(
+                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
+                    );
+                }
+            } catch (Exception IndexOutOfBoundsException) {
+                logger.error("Error: " + IndexOutOfBoundsException.getMessage());
+            }
+
+            // Next query will be for the next position of the offset
+            cell.setOffset(cell.getOffset() + 1);
+
+            // Recursively call
+            adjacentMines.addAll(getAdjacentMines(cell));
+        } else {
+            // Reset the offset... this is ugly, but it works
+            cell.setOffset(0);
+        }
+
+        // Return the list of adjacent cells found so far
+        return adjacentMines;
+    }
+
+    public void uncoverCell(Cell cell) {
+        cell.setStateCanvas(StateCanvas.REVEALED);
+        logger.debug(
+                "Cell: " +
+                        cell.getRow() +
+                        " - " +
+                        cell.getColumn() +
+                        " - " +
+                        cell.getStateSelf() +
+                        " - " +
+                        cell.getStateCanvas()
+        );
+    }
+
+    public void uncoverAllCells() {
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                cell.setStateCanvas(StateCanvas.REVEALED);
+            }
+        }
+        logger.debug("Cells revealed");
+    }
 }

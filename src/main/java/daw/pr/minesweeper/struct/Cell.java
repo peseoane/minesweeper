@@ -45,6 +45,11 @@ public class Cell implements debug {
         this.stateSelf = stateSelf;
     }
 
+    public void uncoverCell(Cell cell) {
+        cell.setStateCanvas(StateCanvas.REVEALED);
+        logger.debug("Cell: " + cell);
+    }
+
     public int[] getPosition() {
         return position;
     }
