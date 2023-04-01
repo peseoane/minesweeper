@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Logs proppelly config to output to a folder (Wich is ignored).">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Neighbors cells working but without a recursive way.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +164,8 @@
       <workItem from="1680024370677" duration="4853000" />
       <workItem from="1680112369007" duration="1451000" />
       <workItem from="1680113829024" duration="48000" />
-      <workItem from="1680114767640" duration="3314000" />
+      <workItem from="1680114767640" duration="3440000" />
+      <workItem from="1680370596280" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -325,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680113644976</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Neighbourds">
+      <created>1680121038716</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680121038716</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Neighbors cells working but without a recursive way.">
+      <created>1680121071900</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680121071900</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +388,10 @@
     <MESSAGE value="IdeaJ config." />
     <MESSAGE value="WIP: filling Cells." />
     <MESSAGE value="Random to the fill was added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Random to the fill was added." />
+    <MESSAGE value="Neighbourds" />
+    <MESSAGE value="Neighbours" />
+    <MESSAGE value="Neighbors cells working but without a recursive way." />
+    <option name="LAST_COMMIT_MESSAGE" value="Neighbors cells working but without a recursive way." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,7 +402,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

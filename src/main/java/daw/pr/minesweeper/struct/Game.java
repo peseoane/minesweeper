@@ -69,6 +69,7 @@ public class Game implements debug {
         return cells[row][column];
     }
 
+    /*
     public ArrayList<Cell> getAdjacentCells(Cell cell) {
         ArrayList<Cell> adjacentCells = new ArrayList<Cell>();
         int x = cell.getRow();
@@ -79,6 +80,29 @@ public class Game implements debug {
                 if (isValidCell(x + i, y + j)) {
                     adjacentCells.add(getCell(x + i, y + j));
                 }
+            }
+        }
+
+        return adjacentCells;
+    }
+    */
+
+    public ArrayList<Cell> getAdjacentCells(Cell cell) {
+        ArrayList<Cell> adjacentCells = new ArrayList<>();
+
+        final int[][] offsets = {
+                {- 1, - 1}, {- 1, 0}, {- 1, 1},
+                {0, - 1}, {0, 1},
+                {1, - 1}, {1, 0}, {1, 1}
+        };
+
+        for (int[] offset : offsets) {
+            int x = cell.getRow() + offset[0];
+            int y = cell.getColumn() + offset[1];
+
+            if (isValidCell(x, y)) {
+                adjacentCells.add(getCell(x, y));
+                System.out.println("x: " + x + " y: " + y);
             }
         }
 
