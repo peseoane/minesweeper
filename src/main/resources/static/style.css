@@ -3,12 +3,23 @@ table {
     width: 100%;
 }
 
-th, td {
-    text-align: center;
-    padding: 8px;
-    border: 1px solid black;
+table, th, td, tr {
+    border: 1px solid;
 }
 
-th {
-    background-color: #ddd;
+.mine {
+    color: red;
+}
+
+.hidden {
+    color: blue;
+}
+
+.hidden {
+    color: blue;
+    background-color: #f1f1c1;
+}
+
+.visible {
+    visibility: visible;
 }

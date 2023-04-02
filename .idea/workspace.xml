@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Migration to SL4J to have a functional logger with SpringBoot">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/easy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="HTML basic quick start template added. CSS not working because i'm lazy.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/easy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +202,7 @@
       <workItem from="1680435998559" duration="2257000" />
       <workItem from="1680440504693" duration="377000" />
       <workItem from="1680453542431" duration="23000" />
-      <workItem from="1680453865150" duration="4796000" />
+      <workItem from="1680453865150" duration="9517000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -444,7 +442,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680456847590</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Functional MVC">
+      <created>1680458773697</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1680458773697</updated>
+    </task>
+    <task id="LOCAL-00036" summary="HTML basic quick start template added. CSS not working because i'm lazy.">
+      <created>1680458794987</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1680458794987</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,8 +475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Idea plugin MD config added." />
-    <MESSAGE value="Docs and a short UML were added as a quick start guide for the coding stage." />
     <MESSAGE value="Cells will be constructed via two Enums as a primary source for the logic basis." />
     <MESSAGE value="Removed obsolete JavaDoc." />
     <MESSAGE value="Basic POO(1..*) cell structure implemented." />
@@ -488,7 +498,9 @@
     <MESSAGE value="Old code removal." />
     <MESSAGE value="Basic spring boot config added in maven." />
     <MESSAGE value="Migration to SL4J to have a functional logger with SpringBoot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration to SL4J to have a functional logger with SpringBoot" />
+    <MESSAGE value="Functional MVC" />
+    <MESSAGE value="HTML basic quick start template added. CSS not working because i'm lazy." />
+    <option name="LAST_COMMIT_MESSAGE" value="HTML basic quick start template added. CSS not working because i'm lazy." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
