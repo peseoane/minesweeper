@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="All proposed methods in the reqs were added, not tested tho.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Print with symbols + cleaning old main code.">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rc" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,6 +132,7 @@
       <list>
         <item itemvalue="Application.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
+        <item itemvalue="Application.daw.pr.minesweeper.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
       </list>
@@ -168,6 +168,7 @@
       <workItem from="1680113829024" duration="48000" />
       <workItem from="1680114767640" duration="3440000" />
       <workItem from="1680370596280" duration="6780000" />
+      <workItem from="1680427731823" duration="159000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -396,7 +397,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="devel" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>

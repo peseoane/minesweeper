@@ -40,10 +40,6 @@ public class App {
         logSystemInfo();
 
         Game game = new Game(Difficulty.EASY);
-        
-    }
-
-    public void calculateNumbers() {
 
     }
 
