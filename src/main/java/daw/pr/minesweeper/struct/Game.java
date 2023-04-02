@@ -10,6 +10,17 @@ public class Game implements debug, gameplay {
     private final static Logger LOGGER = LoggerFactory.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
+    private boolean gameOver = false;
+
+    public Game(Difficulty difficulty) {
+        this.difficulty = difficulty;
+        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
+        generateCanvas(difficulty);
+    }
+
+    public int getTotalCells() {
+        return this.difficulty.getRows() * this.difficulty.getColumns();
+    }
 
     public boolean isGameOver() {
         return gameOver;
@@ -17,14 +28,6 @@ public class Game implements debug, gameplay {
 
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
-    }
-
-    private boolean gameOver = false;
-
-    public Game(Difficulty difficulty) {
-        this.difficulty = difficulty;
-        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
-        generateCanvas(difficulty);
     }
 
     private void generateCanvas(Difficulty difficulty) {
@@ -111,14 +114,7 @@ public class Game implements debug, gameplay {
         // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -160,14 +156,7 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -184,9 +173,7 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    LOGGER.debug(
-                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
-                    );
+                    LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf());
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -208,16 +195,7 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        LOGGER.debug(
-                "Cell: " +
-                        cell.getRow() +
-                        " - " +
-                        cell.getColumn() +
-                        " - " +
-                        cell.getStateSelf() +
-                        " - " +
-                        cell.getStateCanvas()
-        );
+        LOGGER.debug("Cell: " + cell.getRow() + " - " + cell.getColumn() + " - " + cell.getStateSelf() + " - " + cell.getStateCanvas());
     }
 
     public void uncoverAllCells() {
@@ -275,5 +253,9 @@ public class Game implements debug, gameplay {
             return;
         }
         uncoverClickedCell(cell);
+    }
+
+    public Cell[][] getCells() {
+        return cells;
     }
 }
