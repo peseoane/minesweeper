@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Print with symbols + cleaning old main code.">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Old code removal.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/gameplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +169,7 @@
       <workItem from="1680114767640" duration="3440000" />
       <workItem from="1680370596280" duration="6780000" />
       <workItem from="1680427731823" duration="159000" />
+      <workItem from="1680434734689" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -380,7 +381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680383082950</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="NPM up to date">
+      <created>1680434818974</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680434818974</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Old code removal.">
+      <created>1680434828584</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680434828584</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +412,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="devel" />
                       </list>
                     </value>
                   </entry>
@@ -411,8 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Doc fix." />
-    <MESSAGE value="requirements.md written (fron marey)" />
     <MESSAGE value="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)" />
     <MESSAGE value="Reordered static classes of logges." />
     <MESSAGE value="Idea plugin MD config added." />
@@ -436,7 +449,9 @@
     <MESSAGE value="Recursive method was refactored fue to inefficiency. No more list copies." />
     <MESSAGE value="Documentation for getAdjacentCells" />
     <MESSAGE value="All proposed methods in the reqs were added, not tested tho." />
-    <option name="LAST_COMMIT_MESSAGE" value="All proposed methods in the reqs were added, not tested tho." />
+    <MESSAGE value="NPM up to date" />
+    <MESSAGE value="Old code removal." />
+    <option name="LAST_COMMIT_MESSAGE" value="Old code removal." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

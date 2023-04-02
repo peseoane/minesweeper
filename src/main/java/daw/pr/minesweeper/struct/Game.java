@@ -5,19 +5,32 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
-public class Game implements debug {
+public class Game implements debug, gameplay {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
 
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+
+    private boolean gameOver = false;
+
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
+        generateCanvas(difficulty);
+    }
+
+    private void generateCanvas(Difficulty difficulty) {
         fillHidden();
         fillMines(difficulty);
         calculateNumbers();
-        printGame();
     }
 
     private void printGame() {
@@ -137,14 +150,14 @@ public class Game implements debug {
     }
 
     private boolean isValidCell(int x, int y) {
-        // verifica si la celda está dentro del tablero
+        // this is not particularly safe, but it's faster
         return x >= 0 && x < difficulty.getRows() && y >= 0 && y < difficulty.getColumns();
     }
 
     public ArrayList<Cell> getAdjacentMines(Cell cell) {
         ArrayList<Cell> adjacentMines = new ArrayList<>();
 
-        // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
+        // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
                 {- 1, - 1},
@@ -216,6 +229,22 @@ public class Game implements debug {
         logger.debug("Cells revealed");
     }
 
+    public void uncoverClickedCell(Cell cell) {
+        if (cell.getStateSelf() == StateSelf.MINE) {
+            uncoverAllCells();
+            logger.debug("Game over");
+        } else {
+            uncoverCell(cell);
+            if (cell.getMinesAround() == 0) {
+                for (Cell adjacentCell : getAdjacentCells(cell)) {
+                    if (adjacentCell.getStateCanvas() == StateCanvas.HIDDEN) {
+                        uncoverClickedCell(adjacentCell);
+                    }
+                }
+            }
+        }
+    }
+
     public void calculateNumbers() {
         for (Cell[] row : cells) {
             for (Cell cell : row) {
@@ -224,5 +253,27 @@ public class Game implements debug {
                 logger.info("Number of mines around: " + cell.getMinesAround());
             }
         }
+    }
+
+    @Override
+    public void rightClick(Cell cell) {
+        if (cell.getStateCanvas() == StateCanvas.REVEALED) {
+            return;
+        }
+        if (cell.getStateCanvas() == StateCanvas.FLAGGED) {
+            cell.setStateCanvas(StateCanvas.QUESTIONED);
+        } else if (cell.getStateCanvas() == StateCanvas.QUESTIONED) {
+            cell.setStateCanvas(StateCanvas.HIDDEN);
+        } else {
+            cell.setStateCanvas(StateCanvas.FLAGGED);
+        }
+    }
+
+    @Override
+    public void leftClick(Cell cell) {
+        if (cell.getStateCanvas() == StateCanvas.FLAGGED) {
+            return;
+        }
+        uncoverClickedCell(cell);
     }
 }
