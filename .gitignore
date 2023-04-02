@@ -7,6 +7,7 @@
 
 target
 node_modules
+log
 
 # User-specific stuff
 .idea/**/workspace.xml

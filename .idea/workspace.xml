@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Random to the fill was added.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Old code removal.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/gameplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rc" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,7 +63,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;devel&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/git/minesweeper/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -74,7 +74,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\git\\minesweeper\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -132,6 +132,7 @@
       <list>
         <item itemvalue="Application.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
+        <item itemvalue="Application.daw.pr.minesweeper.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
       </list>
@@ -165,6 +166,10 @@
       <workItem from="1680024370677" duration="4853000" />
       <workItem from="1680112369007" duration="1451000" />
       <workItem from="1680113829024" duration="48000" />
+      <workItem from="1680114767640" duration="3440000" />
+      <workItem from="1680370596280" duration="6780000" />
+      <workItem from="1680427731823" duration="159000" />
+      <workItem from="1680434734689" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -320,7 +325,77 @@
       <option name="project" value="LOCAL" />
       <updated>1680113644976</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Neighbourds">
+      <created>1680121038716</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680121038716</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Neighbors cells working but without a recursive way.">
+      <created>1680121071900</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680121071900</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Neighbors cells working but without a recursive way II">
+      <created>1680371655658</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680371655658</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Recursive method was created and tested.">
+      <created>1680373158014</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373158014</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Old code removed.">
+      <created>1680373175440</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373175440</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Recursive method was refactored fue to inefficiency. No more list copies.">
+      <created>1680373838139</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373838139</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Documentation for getAdjacentCells">
+      <created>1680375682627</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680375682627</updated>
+    </task>
+    <task id="LOCAL-00030" summary="All proposed methods in the reqs were added, not tested tho.">
+      <created>1680383082950</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1680383082950</updated>
+    </task>
+    <task id="LOCAL-00031" summary="NPM up to date">
+      <created>1680434818974</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680434818974</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Old code removal.">
+      <created>1680434828584</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680434828584</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,14 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="migrated old structure to log4j2." />
-    <MESSAGE value="Solved an issue with a broken dependency in Maven. Bumped log4j2 to 2.20.0." />
-    <MESSAGE value="Prettier was added to the project." />
-    <MESSAGE value="Documentation updated." />
-    <MESSAGE value="Documentation merged to README.md because there is no need for split docs." />
-    <MESSAGE value="¿Idea crap? Why not... push" />
-    <MESSAGE value="Doc fix." />
-    <MESSAGE value="requirements.md written (fron marey)" />
     <MESSAGE value="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)" />
     <MESSAGE value="Reordered static classes of logges." />
     <MESSAGE value="Idea plugin MD config added." />
@@ -373,7 +440,18 @@
     <MESSAGE value="IdeaJ config." />
     <MESSAGE value="WIP: filling Cells." />
     <MESSAGE value="Random to the fill was added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Random to the fill was added." />
+    <MESSAGE value="Neighbourds" />
+    <MESSAGE value="Neighbours" />
+    <MESSAGE value="Neighbors cells working but without a recursive way." />
+    <MESSAGE value="Neighbors cells working but without a recursive way II" />
+    <MESSAGE value="Recursive method was created and tested." />
+    <MESSAGE value="Old code removed." />
+    <MESSAGE value="Recursive method was refactored fue to inefficiency. No more list copies." />
+    <MESSAGE value="Documentation for getAdjacentCells" />
+    <MESSAGE value="All proposed methods in the reqs were added, not tested tho." />
+    <MESSAGE value="NPM up to date" />
+    <MESSAGE value="Old code removal." />
+    <option name="LAST_COMMIT_MESSAGE" value="Old code removal." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,6 +459,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NoSuchFieldError" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

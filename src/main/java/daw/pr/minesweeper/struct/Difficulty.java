@@ -28,5 +28,6 @@ public enum Difficulty {
     public int getMines() {
         return mines;
     }
+    
 
 }
