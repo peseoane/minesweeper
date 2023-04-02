@@ -12,6 +12,14 @@ public class Game implements debug, gameplay {
     private final Cell[][] cells;
     private boolean gameOver = false;
 
+    public int getRows() {
+        return difficulty.getRows();
+    }
+
+    public int getColumns() {
+        return difficulty.getColumns();
+    }
+
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];

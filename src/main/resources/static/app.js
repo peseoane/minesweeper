@@ -1,17 +1,16 @@
-var tableContainer = document.getElementById('table-container');
-
-const tbody = document.querySelector('#table-container tbody');
-tbody.addEventListener('click', function (e) {
-    const cell = e.target.closest('td');
-    if (!cell) {
-        return;
-    } // Quit, not clicked on a cell
-    const row = cell.parentElement;
-    console.log(cell.innerHTML, row.rowIndex, cell.cellIndex);
-    cell.classList.remove('hidden');
-    if (cell.innerHTML === '.') {
-        cell.classList.add('mine-clicked');
-    }
+const cells = document.querySelectorAll('.hidden');
+cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        const row = cell.dataset.row;
+        const column = cell.dataset.column;
+        fetch(`/revealCell?row=${row}&column=${column}`)
+            .then(response => response.text())
+            .then(html => {
+                const tableContainer = document.getElementById('table-container');
+                tableContainer.innerHTML = html;
+            })
+            .catch(error => console.error(error));
+    });
 });
 
 function revealCell(row, column) {
@@ -19,7 +18,8 @@ function revealCell(row, column) {
     fetch('/revealCell?row=' + row + '&column=' + column)
         .then(response => response.text())
         .then(tableHtml => {
-            tableContainer.innerHTML = tableHtml;
+            cells.innerHTML = tableHtml;
+            history.pushState({}, '', '/refreshTable');
         })
         .catch(error => console.error(error));
 }
