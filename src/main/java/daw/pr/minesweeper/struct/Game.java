@@ -1,13 +1,13 @@
 package daw.pr.minesweeper.struct;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
 public class Game implements debug, gameplay {
 
-    private static final Logger logger = LogManager.getLogger(Game.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
 
@@ -57,8 +57,8 @@ public class Game implements debug, gameplay {
                         cells[i][j].setStateSelf(StateSelf.MINE);
                         remainingMines--;
                     }
-                    if (logger.isDebugEnabled()) {
-                        logger.debug("Cell: " + contador + " - " + cells[i][j]);
+                    if (LOGGER.isDebugEnabled()) {
+                        LOGGER.debug("Cell: " + contador + " - " + cells[i][j]);
                         contador++;
                     }
                 }
@@ -71,8 +71,8 @@ public class Game implements debug, gameplay {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
                 cells[i][j].setPosition(new int[]{i, j});
-                if (logger.isDebugEnabled()) {
-                    logger.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
+                if (LOGGER.isDebugEnabled()) {
+                    LOGGER.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
             }
         }
@@ -132,7 +132,7 @@ public class Game implements debug, gameplay {
             if (isValidCell(x, y)) {
                 // Add the adjacent cell to the list of adjacent cells
                 adjacentCells.add(getCell(x, y));
-                logger.debug("Cell: " + x + " - " + y + " - " + getCell(x, y));
+                LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y));
             }
 
             // Next query will be for the next position of the offset
@@ -184,12 +184,12 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    logger.debug(
+                    LOGGER.debug(
                             "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
                     );
                 }
             } catch (Exception IndexOutOfBoundsException) {
-                logger.error("Error: " + IndexOutOfBoundsException.getMessage());
+                LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
             }
 
             // Next query will be for the next position of the offset
@@ -208,7 +208,7 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        logger.debug(
+        LOGGER.debug(
                 "Cell: " +
                         cell.getRow() +
                         " - " +
@@ -226,13 +226,13 @@ public class Game implements debug, gameplay {
                 cell.setStateCanvas(StateCanvas.REVEALED);
             }
         }
-        logger.debug("Cells revealed");
+        LOGGER.debug("Cells revealed");
     }
 
     public void uncoverClickedCell(Cell cell) {
         if (cell.getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
-            logger.debug("Game over");
+            LOGGER.debug("Game over");
         } else {
             uncoverCell(cell);
             if (cell.getMinesAround() == 0) {
@@ -250,7 +250,7 @@ public class Game implements debug, gameplay {
             for (Cell cell : row) {
                 // Count the number of adjacent mines
                 cell.setMinesAround(getAdjacentMines(cell).size());
-                logger.info("Number of mines around: " + cell.getMinesAround());
+                LOGGER.info("Number of mines around: " + cell.getMinesAround());
             }
         }
     }

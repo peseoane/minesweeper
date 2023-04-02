@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Old code removal.">
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/MinesweeperApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/daw/pr/minesweeper/MinesweeperApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Basic spring boot config added in maven.">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.factorypath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/minesweeper.plantuml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/struct.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/MinesweeperApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,41 +74,45 @@
     <option name="showVisibilityIcons" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;devel-webapp&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/git/minesweeper/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\git\\minesweeper\\node_modules\\prettier&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37471265&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "devel-webapp",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "temurin-17",
+    "last_opened_file_path": "C:/git/minesweeper/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\git\\minesweeper\\node_modules\\prettier",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.37471265",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\git\minesweeper\src\main\resources" />
@@ -146,13 +158,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MinesweeperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="minesweeper" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.MinesweeperApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daw.pr.minesweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Spring Boot.MinesweeperApplication" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.daw.pr.minesweeper.App" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +216,7 @@
       <workItem from="1680435998559" duration="2257000" />
       <workItem from="1680440504693" duration="377000" />
       <workItem from="1680453542431" duration="23000" />
-      <workItem from="1680453865150" duration="195000" />
+      <workItem from="1680453865150" duration="2860000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -417,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680434828584</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Basic spring boot config added in maven.">
+      <created>1680454151739</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680454151739</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +468,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)" />
     <MESSAGE value="Reordered static classes of logges." />
     <MESSAGE value="Idea plugin MD config added." />
     <MESSAGE value="Docs and a short UML were added as a quick start guide for the coding stage." />
@@ -461,7 +492,8 @@
     <MESSAGE value="All proposed methods in the reqs were added, not tested tho." />
     <MESSAGE value="NPM up to date" />
     <MESSAGE value="Old code removal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Old code removal." />
+    <MESSAGE value="Basic spring boot config added in maven." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic spring boot config added in maven." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -473,6 +505,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="5" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
