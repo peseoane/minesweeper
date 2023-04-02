@@ -3,21 +3,27 @@ package daw.pr.minesweeper;
 import daw.pr.minesweeper.struct.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class GameController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GameController.class);
     Game game;
 
-    @GetMapping("/startGame")
+    @GetMapping("/")
+    public String index() {
+        return "./index.html";
+    }
+
+
+    @PostMapping("/startGame")
     @ResponseBody
-    public String minesweeper(@RequestParam(value = "difficulty") String difficultyString) {
-        LOGGER.info("Starting Minesweeper with difficulty: " + difficultyString);
+    public String startGame(@RequestParam("difficulty") String difficultyString) {
         Difficulty difficulty = Difficulty.valueOf(difficultyString.toUpperCase());
         game = new Game(difficulty);
-        LOGGER.debug(game.toString());
+        LOGGER.info("Starting game with difficulty: " + difficulty);
         return getTableHtml();
     }
 
@@ -32,7 +38,6 @@ public class GameController {
         // crear y devolver la tabla actualizada
         return getTableHtml();
     }
-
 
     private String getTableHtml() {
         int totalCells = game.getTotalCells();
@@ -50,8 +55,13 @@ public class GameController {
                 if (cell.getStateSelf() == StateSelf.MINE) {
                     sb.append("<div class='mine'>.</div> ");
                 } else if (cell.getStateCanvas() == StateCanvas.HIDDEN) {
-                    sb.append("<div class='hidden' onclick='revealCell(" + cell.getRow() + ", " + cell.getColumn() +
-                                      ")'>_</div> ");
+                    sb.append(
+                            "<div class='hidden' onclick='revealCell(" +
+                                    cell.getRow() +
+                                    ", " +
+                                    cell.getColumn() +
+                                    ")'>_</div> "
+                    );
                 } else {
                     sb.append("<div class='visible'>" + cell.getMinesAround() + "</div> ");
                 }
@@ -66,5 +76,4 @@ public class GameController {
 
         return sb.toString();
     }
-
 }
