@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Functional without CSS.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Functional with CSS.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/bomb.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/rock.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +218,7 @@
       <workItem from="1680466973503" duration="4379000" />
       <workItem from="1680535630782" duration="4711000" />
       <workItem from="1680545114675" duration="5790000" />
-      <workItem from="1680550918192" duration="3970000" />
+      <workItem from="1680550918192" duration="7939000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -538,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680552009007</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Functional with CSS.">
+      <created>1680554923833</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1680554923833</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Neighbourds" />
     <MESSAGE value="Neighbours" />
     <MESSAGE value="Neighbors cells working but without a recursive way." />
     <MESSAGE value="Neighbors cells working but without a recursive way II" />
@@ -582,7 +592,8 @@
     <MESSAGE value="Created endGame page." />
     <MESSAGE value="Assets for bg and icons." />
     <MESSAGE value="Functional without CSS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Functional without CSS." />
+    <MESSAGE value="Functional with CSS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Functional with CSS." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,6 +614,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
