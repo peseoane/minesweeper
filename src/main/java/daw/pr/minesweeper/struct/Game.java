@@ -7,10 +7,17 @@ import java.util.ArrayList;
 
 public class Game implements debug, gameplay {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(Game.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
     private boolean gameOver = false;
+    private int moves;
+
+    public Game(Difficulty difficulty) {
+        this.difficulty = difficulty;
+        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
+        generateCanvas(difficulty);
+    }
 
     public int getRows() {
         return difficulty.getRows();
@@ -18,12 +25,6 @@ public class Game implements debug, gameplay {
 
     public int getColumns() {
         return difficulty.getColumns();
-    }
-
-    public Game(Difficulty difficulty) {
-        this.difficulty = difficulty;
-        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
-        generateCanvas(difficulty);
     }
 
     public int getTotalCells() {
@@ -122,7 +123,14 @@ public class Game implements debug, gameplay {
         // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -164,7 +172,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -181,7 +196,9 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf());
+                    LOGGER.debug(
+                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
+                    );
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -203,7 +220,16 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        LOGGER.debug("Cell: " + cell.getRow() + " - " + cell.getColumn() + " - " + cell.getStateSelf() + " - " + cell.getStateCanvas());
+        LOGGER.debug(
+                "Cell: " +
+                        cell.getRow() +
+                        " - " +
+                        cell.getColumn() +
+                        " - " +
+                        cell.getStateSelf() +
+                        " - " +
+                        cell.getStateCanvas()
+        );
     }
 
     public void uncoverAllCells() {
@@ -216,10 +242,11 @@ public class Game implements debug, gameplay {
     }
 
     public void uncoverClickedCell(Cell cell) {
-        if (cell.getStateSelf() == StateSelf.MINE) {
+        if (moves == 0 && cell.getStateSelf() == StateSelf.MINE) {
+            firstMoveCannotBeLoose(cell);
+        } else if (cell.getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
             setGameOver(true);
-            LOGGER.debug("Game over");
         } else {
             uncoverCell(cell);
             if (cell.getMinesAround() == 0) {
@@ -230,10 +257,29 @@ public class Game implements debug, gameplay {
                 }
             }
         }
+        moves++;
+    }
+
+    private void firstMoveCannotBeLoose(Cell cell) {
+        // If the first move is a mine, move the mine to another cell
+        cell.setStateSelf(StateSelf.CLEAR);
+        // Get a random cell
+
+        // If the random cell is not a mine, set it as a mine
+        if (
+                getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                        .getStateSelf() !=
+                        StateSelf.MINE
+        ) {
+            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                    .setStateSelf(StateSelf.MINE);
+        }
     }
 
     public void uncoverClickedCell(int row, int column) {
-        if (getCell(row, column).getStateSelf() == StateSelf.MINE) {
+        if (moves == 0 && getCell(row, column).getStateSelf() == StateSelf.MINE) {
+            firstMoveCannotBeLoose(getCell(row, column));
+        } else if (getCell(row, column).getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
             setGameOver(true);
             LOGGER.debug("Game over");
@@ -247,6 +293,7 @@ public class Game implements debug, gameplay {
                 }
             }
         }
+        moves++;
     }
 
     public void calculateNumbers() {
@@ -258,7 +305,6 @@ public class Game implements debug, gameplay {
             }
         }
     }
-
 
     /* Obsolete code, but I'm too lazy to delete it in case will need it again and
     if future use of javascript + listeners instead of java + interfaces
