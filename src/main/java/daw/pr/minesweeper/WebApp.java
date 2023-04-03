@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WebApp {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
-    private final int moves = 0;
     Game game;
 
     @GetMapping("/")
@@ -66,7 +65,7 @@ public class WebApp {
             html.append("</tr>");
         }
         html.append("</table>");
-        
+
         if (game.isGameOver()) {
             html.append("<form action='/gameover.html' method='get'>");
             html.append("<input type='submit' value='Game Over'>");
