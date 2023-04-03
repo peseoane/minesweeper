@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th='http://www.w3.org/1999/xhtml'>
 <head>
     <title>Minesweeper</title>
     <meta charset='UTF-8'>
@@ -16,6 +16,12 @@
     </select>
     <button type='submit'>Start Game</button>
 </form>
-<script src='app.js'></script>
+
+<form method='post' th:action='@{/revealCell}'>
+    <input type='hidden' name='row' th:value='${row}' />
+    <input type='hidden' name='column' th:value='${column}' />
+    <button type='submit'>Click me!</button>
+</form>
+
 </body>
 </html>

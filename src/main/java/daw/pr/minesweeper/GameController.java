@@ -1,6 +1,8 @@
 package daw.pr.minesweeper;
 
-import daw.pr.minesweeper.struct.*;
+import daw.pr.minesweeper.struct.Difficulty;
+import daw.pr.minesweeper.struct.Game;
+import daw.pr.minesweeper.struct.StateCanvas;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class GameController {
 
-    private int moves = 0;
     private static final Logger LOGGER = LoggerFactory.getLogger(GameController.class);
+    private final int moves = 0;
     Game game;
 
     @GetMapping("/")
@@ -30,65 +32,40 @@ public class GameController {
         return getTableHtml();
     }
 
-    @GetMapping("/revealCell")
-    public String revealCell(@RequestParam("row") int row, @RequestParam("column") int column) {
-        LOGGER.info("Revealing cell: " + row + ", " + column);
-        if (game == null) {
-            LOGGER.error("Game object is null!");
-        }
-        LOGGER.info("Game object is not null");
-        game.getCell(row, column).setStateCanvas(StateCanvas.REVEALED);
-        // crear y devolver la tabla actualizada
-        return getTableHtml();
-    }
-
     @GetMapping("/getTableHtml")
+    @ResponseBody
     public String getTableHtml() {
-
-        int totalCells = game.getTotalCells();
-        StringBuilder sb = new StringBuilder();
-        sb.append("<h1>Minesweeper</h1>");
-        sb.append("moves: " + moves);
-        moves++;
-        sb.append("<link rel='stylesheet' href='./style.css'>");
-        sb.append("<script src='./app.js'></script>");
-        sb.append("<div id='table-container'>");
-        sb.append("<table>");
-        for (Cell[] row : game.getCells()) {
-            sb.append("<tr>");
-
-            for (Cell cell : row) {
-                sb.append("<td>");
-                if (cell.getStateSelf() == StateSelf.MINE) {
-                    sb.append("<div class='mine'>.</div> ");
-                } else if (cell.getStateCanvas() == StateCanvas.HIDDEN) {
-                    sb.append("<div class='hidden' onclick='revealCell(" + cell.getRow() + ", " + cell.getColumn() +
-                                      ")'>_</div> ");
+        StringBuilder tableHtml = new StringBuilder();
+        tableHtml.append("<table>");
+        for (int i = 0; i < game.getRows(); i++) {
+            tableHtml.append("<tr>");
+            for (int j = 0; j < game.getColumns(); j++) {
+                if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
+                    tableHtml.append("<td>");
+                    tableHtml.append(game.getCell(i, j).getMinesAround());
+                    tableHtml.append("</td>");
+                    continue;
                 } else {
-                    sb.append("<div class='visible'>" + cell.getMinesAround() + "</div> ");
-                }
-                sb.append("</td>");
-            }
-            sb.append("</tr>");
-        }
-        sb.append("</table>");
-        sb.append("</div>");
-        sb.append("<p>Remaining cells:</p>");
-        sb.append("<p id='remaining-cells'>" + game.getTotalCells() + "</p>");
-        sb.append("<button onclick='window.location.reload()'>Refresh</button>");
-
-        for (Cell[] row : game.getCells()) {
-            for (Cell cell : row) {
-                if (cell.getStateSelf() == StateSelf.MINE) {
-                    sb.append("* ");
-                } else {
-                    sb.append(cell.getMinesAround() + " ");
+                    tableHtml.append("<td>");
+                    tableHtml.append("<form action='/revealCell' method='post'>");
+                    tableHtml.append("<input type='hidden' name='row' value='" + i + "'/>");
+                    tableHtml.append("<input type='hidden' name='column' value='" + j + "'/>");
+                    tableHtml.append("<button type='submit'></button>");
+                    tableHtml.append("</form>");
+                    tableHtml.append("</td>");
                 }
             }
-            System.out.println();
         }
-
-        sb.append(game.getCells());
-        return sb.toString();
+        return tableHtml.toString();
     }
+
+    @PostMapping("/revealCell")
+    public String revealCell(@RequestParam int row, @RequestParam int column) {
+        // Procesamiento de la información recibida
+        game.getCell(row, column).setStateCanvas(StateCanvas.REVEALED);
+        System.out.println("Row: " + row + " Column: " + column);
+        return "redirect:/getTableHtml";
+    }
+
+
 }

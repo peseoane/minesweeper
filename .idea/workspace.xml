@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Solved a bug that creates an array index error.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="WIP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
     </list>
@@ -78,7 +77,7 @@
     "git-widget-placeholder": "devel-webapp",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-17",
-    "last_opened_file_path": "C:/git/minesweeper/src/main/resources",
+    "last_opened_file_path": "C:/git/minesweeper/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,7 +89,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.37471265",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
     "spring.configuration.checksum": "2eb09b1b77ec8c1da05d099b42b0cbee",
     "vue.rearranger.settings.migration": "true"
   },
@@ -102,6 +101,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\minesweeper\src\main\resources\static" />
       <recent name="C:\git\minesweeper\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -208,7 +208,8 @@
       <workItem from="1680440504693" duration="377000" />
       <workItem from="1680453542431" duration="23000" />
       <workItem from="1680453865150" duration="9723000" />
-      <workItem from="1680466973503" duration="4198000" />
+      <workItem from="1680466973503" duration="4379000" />
+      <workItem from="1680535630782" duration="2939000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -483,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680467983947</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="WIP">
+      <created>1680471352874</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1680471352874</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic composition of classes, still has a flaw (States aren't complete)." />
     <MESSAGE value="Idea config changed to allow code rearrange." />
     <MESSAGE value="Now cells can be drawn in 3 ways and also had states but without mixing." />
     <MESSAGE value="Update docs due to refactor." />
@@ -527,7 +534,8 @@
     <MESSAGE value="WIP (not working mouse listener)" />
     <MESSAGE value="Landing page funcional." />
     <MESSAGE value="Solved a bug that creates an array index error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved a bug that creates an array index error." />
+    <MESSAGE value="WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -544,6 +552,10 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="5" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -551,9 +563,6 @@
         <watch expression="game" />
         <watch expression="cells" />
       </configuration>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" line="28">
-        <watch expression="game" />
-      </inline-watch>
     </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
