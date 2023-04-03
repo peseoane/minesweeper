@@ -218,11 +218,28 @@ public class Game implements debug, gameplay {
     public void uncoverClickedCell(Cell cell) {
         if (cell.getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
+            setGameOver(true);
             LOGGER.debug("Game over");
         } else {
             uncoverCell(cell);
             if (cell.getMinesAround() == 0) {
                 for (Cell adjacentCell : getAdjacentCells(cell)) {
+                    if (adjacentCell.getStateCanvas() == StateCanvas.HIDDEN) {
+                        uncoverClickedCell(adjacentCell);
+                    }
+                }
+            }
+        }
+    }
+
+    public void uncoverClickedCell(int row, int column) {
+        if (getCell(row, column).getStateSelf() == StateSelf.MINE) {
+            uncoverAllCells();
+            LOGGER.debug("Game over");
+        } else {
+            uncoverCell(getCell(row, column));
+            if (getCell(row, column).getMinesAround() == 0) {
+                for (Cell adjacentCell : getAdjacentCells(getCell(row, column))) {
                     if (adjacentCell.getStateCanvas() == StateCanvas.HIDDEN) {
                         uncoverClickedCell(adjacentCell);
                     }
@@ -241,6 +258,10 @@ public class Game implements debug, gameplay {
         }
     }
 
+
+    /* Obsolete code, but I'm too lazy to delete it in case will need it again and
+    if future use of javascript + listeners instead of java + interfaces
+    */
     @Override
     public void rightClick(Cell cell) {
         if (cell.getStateCanvas() == StateCanvas.REVEALED) {

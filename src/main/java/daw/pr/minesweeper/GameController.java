@@ -66,12 +66,21 @@ public class GameController {
     @PostMapping("/revealCell")
     public String revealCell(@RequestParam int row, @RequestParam int column) {
         LOGGER.info("Clicked on Row: " + row + " Column: " + column);
-        game.getCell(row, column).setStateCanvas(StateCanvas.REVEALED);
+        game.uncoverClickedCell(row, column);
         LOGGER.info("Cell: " + game.getCell(row, column));
         LOGGER.info("Game: " + game);
         LOGGER.info("REVEALED");
-        return "redirect:/getTableHtml";
+        if (game.isGameOver()) {
+            LOGGER.info("GAME OVER");
+            return "redirect:/gameOver";
+        } else {
+            return "redirect:/getTableHtml";
+        }
     }
 
+    @PostMapping("/gameOver")
+    public String gameOver() {
+        return "gameOver.html";
+    }
 
 }
