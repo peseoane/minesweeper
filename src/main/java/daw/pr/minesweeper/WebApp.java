@@ -39,32 +39,30 @@ public class WebApp {
         StringBuilder html = new StringBuilder();
         html.append("<link rel='stylesheet' href='./style.css'>");
         String image = "./assets/mosaicoAmarillo.svg";
-        html.append("<div id='container'>");
+        html.append("<div class='container'>");
         html.append("<table>");
         for (int i = 0; i < game.getRows(); i++) {
             html.append("<tr>");
             for (int j = 0; j < game.getColumns(); j++) {
 
                 html.append("<td>");
-                html.append("<div class='cell'");
-
-                if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED && game.getCell(i, j).getStateSelf() == StateSelf.MINE) {
-                    html.append("div class='cellInside'");
-                    html.append("<img class='mine' src='./assets/bomb.svg'>");
-                    html.append("</div>");
-                } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
-                    html.append("div class='cellInside'");
-                    html.append("<p class='number'>" + game.getCell(i, j).getMinesAround() + "</p>");
-                    html.append("</div>");
-                }
-
-                html.append("<div class=bg>");
+                html.append("<div class='cell'>");
                 html.append("<a href='/revealCell?row=" + i + "&column=" + j + "'>");
-                html.append("<img class='unknownCell' src= " + image + " style='display: block; width: 100%; height: " +
-                                    "100%;' >");
+                html.append("<div class='cellInside'");
+                if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED && game.getCell(i, j).getStateSelf() == StateSelf.MINE) {
+                    html.append("<img class='mine' src='./assets/bomb.svg'>");
+                } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
+                    html.append("<p class='number'>" + game.getCell(i, j).getMinesAround() + "</p>");
+                } else {
+                    html.append("<p>?</p>");
+                }
                 html.append("</div>");
-                html.append("</td>");
-                html.append("</div>");
+
+                //html.append("<div class='bg'>");
+                // html.append("<img class='tile' src= " + image + " ' >");
+                html.append("</a>");
+                //html.append("</div>");
+                //html.append("</div>");
                 html.append("</td>");
             }
             html.append("</tr>");

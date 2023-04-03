@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Fast debug config added.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/bomb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoAmarillo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoAmarilloAzul.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoAzul.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoAzulBlanco.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoRojo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/mosaicoRojoBlanco.svg" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Functional without CSS.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +214,7 @@
       <workItem from="1680466973503" duration="4379000" />
       <workItem from="1680535630782" duration="4711000" />
       <workItem from="1680545114675" duration="5790000" />
-      <workItem from="1680550918192" duration="1030000" />
+      <workItem from="1680550918192" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -531,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680544333053</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Assets for bg and icons.">
+      <created>1680551994691</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1680551994691</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Functional without CSS.">
+      <created>1680552009007</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1680552009007</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,8 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="WIP: filling Cells." />
-    <MESSAGE value="Random to the fill was added." />
     <MESSAGE value="Neighbourds" />
     <MESSAGE value="Neighbours" />
     <MESSAGE value="Neighbors cells working but without a recursive way." />
@@ -575,7 +580,9 @@
     <MESSAGE value="Mine visibility when revealed." />
     <MESSAGE value="MVC solved to auto uncover in case of mine." />
     <MESSAGE value="Created endGame page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created endGame page." />
+    <MESSAGE value="Assets for bg and icons." />
+    <MESSAGE value="Functional without CSS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Functional without CSS." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
