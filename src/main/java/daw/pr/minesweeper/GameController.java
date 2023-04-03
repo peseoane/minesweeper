@@ -42,7 +42,11 @@ public class GameController {
             for (int j = 0; j < game.getColumns(); j++) {
                 if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
                     tableHtml.append("<td>");
-                    tableHtml.append(game.getCell(i, j).getMinesAround());
+                    if (game.getCell(i, j).getStateSelf() == daw.pr.minesweeper.struct.StateSelf.MINE) {
+                        tableHtml.append("X");
+                    } else {
+                        tableHtml.append(game.getCell(i, j).getMinesAround());
+                    }
                     tableHtml.append("</td>");
                     continue;
                 } else {
@@ -61,9 +65,11 @@ public class GameController {
 
     @PostMapping("/revealCell")
     public String revealCell(@RequestParam int row, @RequestParam int column) {
-        // Procesamiento de la información recibida
+        LOGGER.info("Clicked on Row: " + row + " Column: " + column);
         game.getCell(row, column).setStateCanvas(StateCanvas.REVEALED);
-        System.out.println("Row: " + row + " Column: " + column);
+        LOGGER.info("Cell: " + game.getCell(row, column));
+        LOGGER.info("Game: " + game);
+        LOGGER.info("REVEALED");
         return "redirect:/getTableHtml";
     }
 
