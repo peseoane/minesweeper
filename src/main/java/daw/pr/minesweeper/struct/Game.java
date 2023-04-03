@@ -17,8 +17,10 @@ public class Game implements debug, gameplay {
         this.difficulty = difficulty;
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
         generateCanvas(difficulty);
+        // print cells
+        printGame();
     }
-
+    
     public int getRows() {
         return difficulty.getRows();
     }
@@ -258,6 +260,18 @@ public class Game implements debug, gameplay {
             }
         }
         moves++;
+    }
+
+    public boolean isWin() {
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                // check that all the cells that are not mines are revealed
+                if (cell.getStateSelf() != StateSelf.MINE && cell.getStateCanvas() != StateCanvas.REVEALED) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     private void firstMoveCannotBeLoose(Cell cell) {

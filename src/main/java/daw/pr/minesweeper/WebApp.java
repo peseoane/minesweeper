@@ -70,6 +70,10 @@ public class WebApp {
             html.append("<form action='/gameover.html' method='get'>");
             html.append("<input type='submit' value='Game Over'>");
             html.append("</form>");
+        } else if (game.isWin()) {
+            html.append("<form action='/win.html' method='get'>");
+            html.append("<input type='submit' value='You Win'>");
+            html.append("</form>");
         }
 
         html.append("</div>");
