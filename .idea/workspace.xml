@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Mine visibility when revealed.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Created endGame page.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,10 +90,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\git\\minesweeper\\node_modules\\prettier",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.37471265",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "settings.editor.selected.configurable": "advanced.settings",
     "spring.configuration.checksum": "2eb09b1b77ec8c1da05d099b42b0cbee",
     "vue.rearranger.settings.migration": "true"
   },
@@ -121,7 +125,7 @@
       <command value="mvn release:update-versions " />
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.daw.pr.minesweeper.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
       <module name="minesweeper" />
@@ -164,9 +168,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Spring Boot.MinesweeperApplication" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
+        <item itemvalue="Spring Boot.MinesweeperApplication" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.daw.pr.minesweeper.App" />
         <item itemvalue="Application.App" />
       </list>
@@ -209,7 +213,7 @@
       <workItem from="1680453542431" duration="23000" />
       <workItem from="1680453865150" duration="9723000" />
       <workItem from="1680466973503" duration="4379000" />
-      <workItem from="1680535630782" duration="4134000" />
+      <workItem from="1680535630782" duration="4711000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -505,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680538904283</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="MVC solved to auto uncover in case of mine.">
+      <created>1680544307617</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1680544307617</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Created endGame page.">
+      <created>1680544333053</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1680544333053</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,8 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update docs due to refactor." />
-    <MESSAGE value="IdeaJ config." />
     <MESSAGE value="WIP: filling Cells." />
     <MESSAGE value="Random to the fill was added." />
     <MESSAGE value="Neighbourds" />
@@ -549,7 +565,9 @@
     <MESSAGE value="WIP" />
     <MESSAGE value="Code is finally working with POST and GET, no JS involved." />
     <MESSAGE value="Mine visibility when revealed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mine visibility when revealed." />
+    <MESSAGE value="MVC solved to auto uncover in case of mine." />
+    <MESSAGE value="Created endGame page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created endGame page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

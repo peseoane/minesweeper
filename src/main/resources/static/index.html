@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th='http://www.w3.org/1999/xhtml'>
+<html>
 <head>
     <title>Minesweeper</title>
-    <meta charset='UTF-8'>
-    <link rel='stylesheet' href='style.css'>
+    <meta charset='UTF-8' />
+    <link rel='stylesheet' href='style.css' />
 </head>
 <body>
-<h1>Minesweeper</h1>
-<form method='POST' action='/startGame'>
-    <label for='difficulty'>Select difficulty:</label>
-    <select name='difficulty' id='difficulty'>
-        <option value='EASY'>Easy</option>
-        <option value='MEDIUM'>Medium</option>
-        <option value='HARD'>Hard</option>
-    </select>
-    <button type='submit'>Start Game</button>
-</form>
-
-<form method='post' th:action='@{/revealCell}'>
-    <input type='hidden' name='row' th:value='${row}' />
-    <input type='hidden' name='column' th:value='${column}' />
-    <button type='submit'>Click me!</button>
-</form>
-
+<div id='main'>
+    <h1>Minesweeper</h1>
+    <div id='inicializador'>
+        <form method='POST' action='/startGame'>
+            <label for='difficulty'>Select difficulty:</label>
+            <select name='difficulty' id='difficulty'>
+                <option value='EASY'>Easy</option>
+                <option value='MEDIUM'>Medium</option>
+                <option value='HARD'>Hard</option>
+            </select>
+            <button type='submit'>Start Game</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
