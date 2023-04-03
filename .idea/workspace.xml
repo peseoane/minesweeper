@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="BUGFIX - The game cannot be started and loosed on the first move.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/win.html" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Feature: Win state is now also available with routing.">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,9 +124,11 @@
       <command value="mvn release:update-versions -DautoVersionSubmodules=true " />
       <command value="mvn release:update-versions " />
       <command value="mvn spring-boot:run  " />
+      <command value="mvn clean package " />
+      <command value="mvn package spring-boot:repackage " />
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Docker.minesweeper-image:latest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
       <module name="minesweeper" />
@@ -168,10 +169,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-default">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="minesweeper-image:latest" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="minesweeper-image:latest" />
+          <option name="containerName" value="minesweeper" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="LaunchBrowser.Before.Run" url="localhost:8080" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Spring Boot.MinesweeperApplication" />
+        <item itemvalue="Docker.minesweeper-image:latest" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Application.App" />
         <item itemvalue="Spring Boot.MinesweeperApplication" />
         <item itemvalue="Application.App" />
@@ -218,14 +247,7 @@
       <workItem from="1680535630782" duration="4711000" />
       <workItem from="1680545114675" duration="5790000" />
       <workItem from="1680550918192" duration="8916000" />
-      <workItem from="1680561777017" duration="636000" />
-    </task>
-    <task id="LOCAL-00003" summary="Prettier was added to the project.">
-      <created>1677970342525</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677970342525</updated>
+      <workItem from="1680561777017" duration="2973000" />
     </task>
     <task id="LOCAL-00004" summary="Documentation updated.">
       <created>1677970353799</created>
@@ -563,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680560570215</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Feature: Win state is now also available with routing.">
+      <created>1680562458671</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1680562458671</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +623,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Old code removed." />
     <MESSAGE value="Recursive method was refactored fue to inefficiency. No more list copies." />
     <MESSAGE value="Documentation for getAdjacentCells" />
     <MESSAGE value="All proposed methods in the reqs were added, not tested tho." />
@@ -619,7 +647,8 @@
     <MESSAGE value="RC - FINAL logic." />
     <MESSAGE value="RC - FINAL webapp." />
     <MESSAGE value="RC - FINAL workspace config." />
-    <option name="LAST_COMMIT_MESSAGE" value="RC - FINAL workspace config." />
+    <MESSAGE value="Feature: Win state is now also available with routing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: Win state is now also available with routing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
