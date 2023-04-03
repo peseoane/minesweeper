@@ -1,15 +1,34 @@
 package daw.pr.minesweeper.struct;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
 public class Game implements debug, gameplay {
 
-    private static final Logger logger = LogManager.getLogger(Game.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
+    private boolean gameOver = false;
+
+    public int getRows() {
+        return difficulty.getRows();
+    }
+
+    public int getColumns() {
+        return difficulty.getColumns();
+    }
+
+    public Game(Difficulty difficulty) {
+        this.difficulty = difficulty;
+        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
+        generateCanvas(difficulty);
+    }
+
+    public int getTotalCells() {
+        return this.difficulty.getRows() * this.difficulty.getColumns();
+    }
 
     public boolean isGameOver() {
         return gameOver;
@@ -17,14 +36,6 @@ public class Game implements debug, gameplay {
 
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
-    }
-
-    private boolean gameOver = false;
-
-    public Game(Difficulty difficulty) {
-        this.difficulty = difficulty;
-        this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
-        generateCanvas(difficulty);
     }
 
     private void generateCanvas(Difficulty difficulty) {
@@ -57,8 +68,8 @@ public class Game implements debug, gameplay {
                         cells[i][j].setStateSelf(StateSelf.MINE);
                         remainingMines--;
                     }
-                    if (logger.isDebugEnabled()) {
-                        logger.debug("Cell: " + contador + " - " + cells[i][j]);
+                    if (LOGGER.isDebugEnabled()) {
+                        LOGGER.debug("Cell: " + contador + " - " + cells[i][j]);
                         contador++;
                     }
                 }
@@ -71,8 +82,8 @@ public class Game implements debug, gameplay {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
                 cells[i][j].setPosition(new int[]{i, j});
-                if (logger.isDebugEnabled()) {
-                    logger.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
+                if (LOGGER.isDebugEnabled()) {
+                    LOGGER.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
             }
         }
@@ -111,14 +122,7 @@ public class Game implements debug, gameplay {
         // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -132,7 +136,7 @@ public class Game implements debug, gameplay {
             if (isValidCell(x, y)) {
                 // Add the adjacent cell to the list of adjacent cells
                 adjacentCells.add(getCell(x, y));
-                logger.debug("Cell: " + x + " - " + y + " - " + getCell(x, y));
+                LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y));
             }
 
             // Next query will be for the next position of the offset
@@ -160,14 +164,7 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -184,12 +181,10 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    logger.debug(
-                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
-                    );
+                    LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf());
                 }
             } catch (Exception IndexOutOfBoundsException) {
-                logger.error("Error: " + IndexOutOfBoundsException.getMessage());
+                LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
             }
 
             // Next query will be for the next position of the offset
@@ -208,16 +203,7 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        logger.debug(
-                "Cell: " +
-                        cell.getRow() +
-                        " - " +
-                        cell.getColumn() +
-                        " - " +
-                        cell.getStateSelf() +
-                        " - " +
-                        cell.getStateCanvas()
-        );
+        LOGGER.debug("Cell: " + cell.getRow() + " - " + cell.getColumn() + " - " + cell.getStateSelf() + " - " + cell.getStateCanvas());
     }
 
     public void uncoverAllCells() {
@@ -226,17 +212,34 @@ public class Game implements debug, gameplay {
                 cell.setStateCanvas(StateCanvas.REVEALED);
             }
         }
-        logger.debug("Cells revealed");
+        LOGGER.debug("Cells revealed");
     }
 
     public void uncoverClickedCell(Cell cell) {
         if (cell.getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
-            logger.debug("Game over");
+            setGameOver(true);
+            LOGGER.debug("Game over");
         } else {
             uncoverCell(cell);
             if (cell.getMinesAround() == 0) {
                 for (Cell adjacentCell : getAdjacentCells(cell)) {
+                    if (adjacentCell.getStateCanvas() == StateCanvas.HIDDEN) {
+                        uncoverClickedCell(adjacentCell);
+                    }
+                }
+            }
+        }
+    }
+
+    public void uncoverClickedCell(int row, int column) {
+        if (getCell(row, column).getStateSelf() == StateSelf.MINE) {
+            uncoverAllCells();
+            LOGGER.debug("Game over");
+        } else {
+            uncoverCell(getCell(row, column));
+            if (getCell(row, column).getMinesAround() == 0) {
+                for (Cell adjacentCell : getAdjacentCells(getCell(row, column))) {
                     if (adjacentCell.getStateCanvas() == StateCanvas.HIDDEN) {
                         uncoverClickedCell(adjacentCell);
                     }
@@ -250,11 +253,15 @@ public class Game implements debug, gameplay {
             for (Cell cell : row) {
                 // Count the number of adjacent mines
                 cell.setMinesAround(getAdjacentMines(cell).size());
-                logger.info("Number of mines around: " + cell.getMinesAround());
+                LOGGER.info("Number of mines around: " + cell.getMinesAround());
             }
         }
     }
 
+
+    /* Obsolete code, but I'm too lazy to delete it in case will need it again and
+    if future use of javascript + listeners instead of java + interfaces
+    */
     @Override
     public void rightClick(Cell cell) {
         if (cell.getStateCanvas() == StateCanvas.REVEALED) {
@@ -275,5 +282,9 @@ public class Game implements debug, gameplay {
             return;
         }
         uncoverClickedCell(cell);
+    }
+
+    public Cell[][] getCells() {
+        return cells;
     }
 }
