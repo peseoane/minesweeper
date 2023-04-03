@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="WIP">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Mine visibility when revealed.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/gameOver.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +209,7 @@
       <workItem from="1680453542431" duration="23000" />
       <workItem from="1680453865150" duration="9723000" />
       <workItem from="1680466973503" duration="4379000" />
-      <workItem from="1680535630782" duration="2939000" />
+      <workItem from="1680535630782" duration="4134000" />
     </task>
     <task id="LOCAL-00001" summary="migrated old structure to log4j2.">
       <created>1677967147176</created>
@@ -491,7 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680471352874</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Code is finally working with POST and GET, no JS involved.">
+      <created>1680538682461</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1680538682461</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Mine visibility when revealed.">
+      <created>1680538904283</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1680538904283</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,8 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Idea config changed to allow code rearrange." />
-    <MESSAGE value="Now cells can be drawn in 3 ways and also had states but without mixing." />
     <MESSAGE value="Update docs due to refactor." />
     <MESSAGE value="IdeaJ config." />
     <MESSAGE value="WIP: filling Cells." />
@@ -535,7 +547,9 @@
     <MESSAGE value="Landing page funcional." />
     <MESSAGE value="Solved a bug that creates an array index error." />
     <MESSAGE value="WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
+    <MESSAGE value="Code is finally working with POST and GET, no JS involved." />
+    <MESSAGE value="Mine visibility when revealed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mine visibility when revealed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
