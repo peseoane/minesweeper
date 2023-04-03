@@ -235,6 +235,7 @@ public class Game implements debug, gameplay {
     public void uncoverClickedCell(int row, int column) {
         if (getCell(row, column).getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
+            setGameOver(true);
             LOGGER.debug("Game over");
         } else {
             uncoverCell(getCell(row, column));

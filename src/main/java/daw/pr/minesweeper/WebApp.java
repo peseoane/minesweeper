@@ -48,15 +48,13 @@ public class WebApp {
                 html.append("<td>");
                 html.append("<div class='cell'>");
                 html.append("<a href='/revealCell?row=" + i + "&column=" + j + "'>");
-                html.append("<div class='cellInside'");
                 if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED && game.getCell(i, j).getStateSelf() == StateSelf.MINE) {
-                    html.append("<img class='mine' src='./assets/bomb.svg'>");
+                    html.append("<img class='mine' src='./assets/bomb.webp'>");
                 } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
                     html.append("<p class='number'>" + game.getCell(i, j).getMinesAround() + "</p>");
                 } else {
                     html.append("<p>?</p>");
                 }
-                html.append("</div>");
 
                 //html.append("<div class='bg'>");
                 // html.append("<img class='tile' src= " + image + " ' >");
@@ -68,7 +66,15 @@ public class WebApp {
             html.append("</tr>");
         }
         html.append("</table>");
+        
+        if (game.isGameOver()) {
+            html.append("<form action='/gameover.html' method='get'>");
+            html.append("<input type='submit' value='Game Over'>");
+            html.append("</form>");
+        }
+
         html.append("</div>");
+
 
         return html.toString();
     }
@@ -80,12 +86,7 @@ public class WebApp {
         LOGGER.info("Cell: " + game.getCell(row, column));
         LOGGER.info("Game: " + game);
         LOGGER.info("REVEALED");
-        if (game.isGameOver()) {
-            LOGGER.info("GAME OVER");
-            return "redirect:/gameOver";
-        } else {
-            return "redirect:/getTableHtml";
-        }
+        return "redirect:/getTableHtml";
     }
 
     @PostMapping("/gameOver")
