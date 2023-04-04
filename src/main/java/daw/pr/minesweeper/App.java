@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class App {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(App.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
     private static void logSystemInfo() {
         LOGGER.info("Java System Properties:");
@@ -21,5 +21,4 @@ public class App {
         LOGGER.info("Starting Minesweeper");
         SpringApplication.run(App.class, args);
     }
-
 }

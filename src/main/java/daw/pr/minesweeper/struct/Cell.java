@@ -50,18 +50,18 @@ public class Cell implements debug {
         this.stateSelf = stateSelf;
     }
 
-// --Commented out by Inspection START (04/04/2023 11:34):
-//    public void uncoverCell(Cell cell) {
-//        cell.setStateCanvas(StateCanvas.REVEALED);
-//        LOGGER.debug("Cell: " + cell);
-//    }
-// --Commented out by Inspection STOP (04/04/2023 11:34)
+    // --Commented out by Inspection START (04/04/2023 11:34):
+    //    public void uncoverCell(Cell cell) {
+    //        cell.setStateCanvas(StateCanvas.REVEALED);
+    //        LOGGER.debug("Cell: " + cell);
+    //    }
+    // --Commented out by Inspection STOP (04/04/2023 11:34)
 
-// --Commented out by Inspection START (04/04/2023 11:33):
-//    public int[] getPosition() {
-//        return position;
-//    }
-// --Commented out by Inspection STOP (04/04/2023 11:33)
+    // --Commented out by Inspection START (04/04/2023 11:33):
+    //    public int[] getPosition() {
+    //        return position;
+    //    }
+    // --Commented out by Inspection STOP (04/04/2023 11:33)
 
     public void setPosition(int[] position) {
         this.position = position;

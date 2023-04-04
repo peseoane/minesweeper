@@ -19,7 +19,7 @@ public class WebApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
     Game game;
 
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @GetMapping("/")
     public String index() {
         return "index.html";
@@ -35,7 +35,7 @@ public class WebApp {
     }
 
     // generate ERROR page
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @GetMapping("/error")
     public String error() {
         LOGGER.error("El objeto game no ha sido inicializado");
@@ -60,8 +60,8 @@ public class WebApp {
                 html.append("<div class='cell'>");
                 html.append("<a href='/revealCell?row=").append(i).append("&column=").append(j).append("'>");
                 if (
-                        game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
-                                game.getCell(i, j).getStateSelf() == StateSelf.MINE
+                    game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
+                    game.getCell(i, j).getStateSelf() == StateSelf.MINE
                 ) {
                     html.append("<img class='mine' src='" + ASSET_MINE + "'>");
                 } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
@@ -103,7 +103,7 @@ public class WebApp {
         return "redirect:/getTableHtml";
     }
 
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @PostMapping("/gameOver")
     public String gameOver() {
         return "gameOver.html";

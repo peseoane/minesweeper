@@ -1,9 +1,8 @@
 package daw.pr.minesweeper.struct;
 
+import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
 
 public class Game implements debug, gameplay {
 
@@ -80,7 +79,7 @@ public class Game implements debug, gameplay {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
-                cells[i][j].setPosition(new int[]{i, j});
+                cells[i][j].setPosition(new int[] { i, j });
                 if (LOGGER.isDebugEnabled()) {
                     LOGGER.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
@@ -121,14 +120,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy... also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+            { -1, -1 },
+            { -1, 0 },
+            { -1, 1 },
+            { 0, -1 },
+            { 0, 1 },
+            { 1, -1 },
+            { 1, 0 },
+            { 1, 1 }
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -170,14 +169,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1},
-                {- 1, 0},
-                {- 1, 1},
-                {0, - 1},
-                {0, 1},
-                {1, - 1},
-                {1, 0},
-                {1, 1}
+            { -1, -1 },
+            { -1, 0 },
+            { -1, 1 },
+            { 0, -1 },
+            { 0, 1 },
+            { 1, -1 },
+            { 1, 0 },
+            { 1, 1 }
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -195,7 +194,7 @@ public class Game implements debug, gameplay {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
                     LOGGER.debug(
-                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
+                        "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
                     );
                 }
             } catch (Exception IndexOutOfBoundsException) {
@@ -219,14 +218,14 @@ public class Game implements debug, gameplay {
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
         LOGGER.debug(
-                "Cell: " +
-                        cell.getRow() +
-                        " - " +
-                        cell.getColumn() +
-                        " - " +
-                        cell.getStateSelf() +
-                        " - " +
-                        cell.getStateCanvas()
+            "Cell: " +
+            cell.getRow() +
+            " - " +
+            cell.getColumn() +
+            " - " +
+            cell.getStateSelf() +
+            " - " +
+            cell.getStateCanvas()
         );
     }
 
@@ -277,12 +276,12 @@ public class Game implements debug, gameplay {
 
         // If the random cell is not a mine, set it as a mine
         if (
-                getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                        .getStateSelf() !=
-                        StateSelf.MINE
+            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                .getStateSelf() !=
+            StateSelf.MINE
         ) {
             getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                    .setStateSelf(StateSelf.MINE);
+                .setStateSelf(StateSelf.MINE);
         }
     }
 
@@ -340,10 +339,9 @@ public class Game implements debug, gameplay {
         }
         uncoverClickedCell(cell);
     }
-
-// --Commented out by Inspection START (04/04/2023 11:34):
-//    public Cell[][] getCells() {
-//        return cells;
-//    }
-// --Commented out by Inspection STOP (04/04/2023 11:34)
+    // --Commented out by Inspection START (04/04/2023 11:34):
+    //    public Cell[][] getCells() {
+    //        return cells;
+    //    }
+    // --Commented out by Inspection STOP (04/04/2023 11:34)
 }

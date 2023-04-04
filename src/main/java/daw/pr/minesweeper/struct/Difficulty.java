@@ -1,7 +1,6 @@
 package daw.pr.minesweeper.struct;
 
 public enum Difficulty {
-
     EASY(6, 6, 6),
     MEDIUM(12, 12, 12),
     HARD(24, 24, 24);
@@ -27,6 +26,4 @@ public enum Difficulty {
     public int getMines() {
         return mines;
     }
-
-
 }
