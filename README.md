@@ -89,13 +89,13 @@ We will create a file called `log4j2.xml` in the `src/main/resources` folder.
 
 Just to explain a little:
 
--   We have two appenders, one for the console and one for the file.
--   We have a logger, that will be the root logger, we will change this for debug in the classes with arguments, that my
-    approach.
--   The root logger will have the level `error` and will use the two appenders.
--   The pattern layout is the format of the log.
--   The file name is the name of the file, and the date format is the date format of the file.
--   The immediate flush is to flush the file immediately, and to append is to append the file or not.
+- We have two appenders, one for the console and one for the file.
+- We have a logger, that will be the root logger, we will change this for debug in the classes with arguments, that my
+  approach.
+- The root logger will have the level `error` and will use the two appenders.
+- The pattern layout is the format of the log.
+- The file name is the name of the file, and the date format is the date format of the file.
+- The immediate flush is to flush the file immediately, and to append is to append the file or not.
 
 ### Configure the logger to work in release mode or debug mode
 
@@ -122,7 +122,7 @@ I'm using the standard _UNIX_ arguments, but you can use whatever you want.
 
 ### Use the logger
 
-In each class, we need to declare a funtion to get the logger.
+In each class, we need to declare a function to get the logger.
 
 **We need to do this in each class and call for the desire main class to print it!.**
 
@@ -206,7 +206,7 @@ log
 node_modules
 ```
 
-> Plase, DO NOT IGNORE ALL `.idea` folder as is designed to be shared and could be helpful for other developers.
+> Please, DO NOT IGNORE ALL `.idea` folder as is designed to be shared and could be helpful for other developers.
 
 You can create a `.gitignore` more specific for your project with this tool:
 

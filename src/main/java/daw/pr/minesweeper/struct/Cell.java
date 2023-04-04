@@ -1,11 +1,7 @@
 package daw.pr.minesweeper.struct;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Cell implements debug {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(Cell.class);
     private int offset = 0;
     private int[] position;
     private StateCanvas stateCanvas;
@@ -54,14 +50,18 @@ public class Cell implements debug {
         this.stateSelf = stateSelf;
     }
 
-    public void uncoverCell(Cell cell) {
-        cell.setStateCanvas(StateCanvas.REVEALED);
-        LOGGER.debug("Cell: " + cell);
-    }
+// --Commented out by Inspection START (04/04/2023 11:34):
+//    public void uncoverCell(Cell cell) {
+//        cell.setStateCanvas(StateCanvas.REVEALED);
+//        LOGGER.debug("Cell: " + cell);
+//    }
+// --Commented out by Inspection STOP (04/04/2023 11:34)
 
-    public int[] getPosition() {
-        return position;
-    }
+// --Commented out by Inspection START (04/04/2023 11:33):
+//    public int[] getPosition() {
+//        return position;
+//    }
+// --Commented out by Inspection STOP (04/04/2023 11:33)
 
     public void setPosition(int[] position) {
         this.position = position;

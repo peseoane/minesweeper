@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
@@ -40,18 +41,6 @@ table {
     border: white 1em solid;
 }
 
-.mine {
-    background-image: url('./assets/bomb.webp');
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    animation-name: explode;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
 @keyframes explode {
     0% {
         opacity: 1;
@@ -86,19 +75,6 @@ p {
     text-align: center;
 }
 
-.cell {
-    align-items: center;
-    justify-content: center;
-    background-image: url("./assets/rock.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 5em;
-    height: 5em;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
 p {
     color: white;
     font-size: 2em;
@@ -123,3 +99,4 @@ a {
     text-align: center;
     text-shadow: 0 0 10px black;
 }
+

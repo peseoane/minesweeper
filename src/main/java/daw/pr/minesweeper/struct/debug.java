@@ -1,11 +1,8 @@
 package daw.pr.minesweeper.struct;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public interface debug {
 
-    public final static Logger LOGGER = LoggerFactory.getLogger(debug.class);
+    // --Commented out by Inspection (04/04/2023 11:34):Logger LOGGER = LoggerFactory.getLogger(debug.class);
 
     @Override
     String toString();

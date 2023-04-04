@@ -20,17 +20,13 @@ public class Game implements debug, gameplay {
         // print cells
         printGame();
     }
-    
+
     public int getRows() {
         return difficulty.getRows();
     }
 
     public int getColumns() {
         return difficulty.getColumns();
-    }
-
-    public int getTotalCells() {
-        return this.difficulty.getRows() * this.difficulty.getColumns();
     }
 
     public boolean isGameOver() {
@@ -122,7 +118,7 @@ public class Game implements debug, gameplay {
     public ArrayList<Cell> getAdjacentCells(Cell cell) {
         ArrayList<Cell> adjacentCells = new ArrayList<>();
 
-        // This could be done dinamically, but I'm lazy and also it's faster, at the end the compiler will do the
+        // This could be done dynamically, but I'm lazy... also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
                 {- 1, - 1},
@@ -345,7 +341,9 @@ public class Game implements debug, gameplay {
         uncoverClickedCell(cell);
     }
 
-    public Cell[][] getCells() {
-        return cells;
-    }
+// --Commented out by Inspection START (04/04/2023 11:34):
+//    public Cell[][] getCells() {
+//        return cells;
+//    }
+// --Commented out by Inspection STOP (04/04/2023 11:34)
 }
