@@ -2,79 +2,74 @@
 
 title __MINESWEEPER's Class Diagram__\n
 
-  namespace daw.pr {
-    namespace minesweeper {
-      class daw.pr.minesweeper.App {
-      }
+  namespace daw.pr.minesweeper {
+    class daw.pr.minesweeper.App {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        class daw.pr.minesweeper.struct.Cell {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    class daw.pr.minesweeper.Cell {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        enum Difficulty {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    enum Difficulty {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        class daw.pr.minesweeper.struct.Game {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    class daw.pr.minesweeper.Game {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        enum StateCanvas {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    class daw.pr.minesweeper.SQLDriver {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        enum StateSelf {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    enum StateCanvas {
     }
   }
   
 
-  namespace daw.pr {
-    namespace minesweeper {
-      namespace struct {
-        interface daw.pr.minesweeper.struct.debug {
-        }
-      }
+  namespace daw.pr.minesweeper {
+    enum StateSelf {
     }
   }
   
 
-  daw.pr.minesweeper.struct.Cell .up.|> daw.pr.minesweeper.struct.debug
-  daw.pr.minesweeper.struct.Cell o-- daw.pr.minesweeper.struct.StateCanvas : stateCanvas
-  daw.pr.minesweeper.struct.Cell o-- daw.pr.minesweeper.struct.StateSelf : stateSelf
-  daw.pr.minesweeper.struct.Game .up.|> daw.pr.minesweeper.struct.debug
-  daw.pr.minesweeper.struct.Game o-- daw.pr.minesweeper.struct.Difficulty : difficulty
+  namespace daw.pr.minesweeper {
+    class daw.pr.minesweeper.WebApp {
+    }
+  }
+  
+
+  namespace daw.pr.minesweeper {
+    interface daw.pr.minesweeper.debug {
+    }
+  }
+  
+
+  namespace daw.pr.minesweeper {
+    interface daw.pr.minesweeper.gameplay {
+    }
+  }
+  
+
+  daw.pr.minesweeper.Cell .up.|> daw.pr.minesweeper.debug
+  daw.pr.minesweeper.Cell o-- daw.pr.minesweeper.StateCanvas : stateCanvas
+  daw.pr.minesweeper.Cell o-- daw.pr.minesweeper.StateSelf : stateSelf
+  daw.pr.minesweeper.Game .up.|> daw.pr.minesweeper.debug
+  daw.pr.minesweeper.Game .up.|> daw.pr.minesweeper.gameplay
+  daw.pr.minesweeper.Game o-- daw.pr.minesweeper.Difficulty : difficulty
+  daw.pr.minesweeper.Game o-- daw.pr.minesweeper.SQLDriver : sql
+  daw.pr.minesweeper.WebApp o-- daw.pr.minesweeper.Game : game
 
 
 right footer

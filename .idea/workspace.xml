@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
@@ -7,51 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="SQLite implementation.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java" afterDir="false" />
-      <change
-                beforePath="$PROJECT_DIR$/.idea/dataSources.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/dataSources.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/.idea/workspace.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/workspace.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/identifier.sqlite"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/identifier.sqlite"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/init.sql"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/init.sql"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java"
-                afterDir="false"
-            />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Score.java" beforeDir="false" />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/style.css"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/style.css"
-                afterDir="false"
-            />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="SQLite implementation + CRT effect.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQL.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/minesweeper.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/struct.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/webApp.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/daw/pr/minesweeper/minesweeper.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minesweeper.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/minesweeper.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
     </list>
     <list id="9315a1a7-14cf-4c56-852e-61c38b59fc51" name="generateScore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,10 +55,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting
-            file="jar://$USER_HOME$/.jdks/temurin-17.0.6/lib/src.zip!/java.base/java/lang/NoSuchFieldError.java"
-            root0="SKIP_INSPECTION"
-        />
+    <setting file="jar://$USER_HOME$/.jdks/temurin-17.0.6/lib/src.zip!/java.base/java/lang/NoSuchFieldError.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="pg7vpxoc" />
@@ -113,9 +79,7 @@
     <option name="showVisibilityIcons" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component
-        name="PropertiesComponent"
-    ><![CDATA[{
+  <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
@@ -147,7 +111,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.37471265",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "2eb09b1b77ec8c1da05d099b42b0cbee",
     "vue.rearranger.settings.migration": "true"
   },
@@ -169,11 +133,11 @@
       <recent name="C:\git\minesweeper\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\minesweeper\src\main\java\daw\pr\minesweeper" />
       <recent name="C:\git\minesweeper" />
       <recent name="C:\git\minesweeper\src\main\java\daw\pr\minesweeper\SQL" />
       <recent name="C:\git\minesweeper\src\main\resources\static" />
       <recent name="C:\git\minesweeper\src\main\resources\templates" />
-      <recent name="C:\git\minesweeper\src\main\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -184,8 +148,12 @@
       <command value="mvn release:update-versions -DautoVersionSubmodules=true " />
       <command value="mvn release:update-versions " />
       <command value="mvn spring-boot:run  " />
-      <command value="mvn clean package " />
       <command value="mvn package spring-boot:repackage " />
+      <command value="mvn compile" />
+      <command value="mvn install" />
+      <command value="mvn javadoc:javadoc " />
+      <command value="mvn clean package " />
+      <command value="mvn plantuml:generate" />
     </option>
   </component>
   <component name="RunManager" selected="Application.App">
@@ -216,13 +184,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration
-            name="MinesweeperApplication"
-            type="SpringBootApplicationConfigurationType"
-            factoryName="Spring Boot"
-            temporary="true"
-            nameIsGenerated="true"
-        >
+    <configuration name="MinesweeperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="minesweeper" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.MinesweeperApplication" />
       <extension name="coverage">
@@ -235,13 +197,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration
-            name="Dockerfile"
-            type="docker-deploy"
-            factoryName="dockerfile"
-            temporary="true"
-            server-name="docker-default"
-        >
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-default">
       <deployment type="dockerfile">
         <settings>
           <option name="buildOnly" value="true" />
@@ -262,13 +218,7 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration
-            name="minesweeper-image:latest"
-            type="docker-deploy"
-            factoryName="docker-image"
-            temporary="true"
-            server-name="docker-default"
-        >
+    <configuration name="minesweeper-image:latest" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
       <deployment type="docker-image">
         <settings>
           <option name="imageTag" value="minesweeper-image:latest" />
@@ -289,15 +239,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component
-        name="SpellCheckerSettings"
-        RuntimeDictionaries="0"
-        Folders="0"
-        CustomDictionaries="0"
-        DefaultDictionary="application-level"
-        UseSingleDictionary="true"
-        transferred="true"
-    />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="" />
@@ -343,17 +285,8 @@
       <workItem from="1680592648502" duration="465000" />
       <workItem from="1680599530678" duration="1680000" />
       <workItem from="1680605485215" duration="9815000" />
-      <workItem from="1680622454085" duration="2659000" />
-    </task>
-    <task
-            id="LOCAL-00009"
-            summary="Basic prettier config improved and adjusted to be automatic on save. (Only for idea)"
-        >
-      <created>1679937300005</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1679937300005</updated>
+      <workItem from="1680622454085" duration="2987000" />
+      <workItem from="1680629420021" duration="2782000" />
     </task>
     <task id="LOCAL-00010" summary="Reordered static classes of logges.">
       <created>1679937319032</created>
@@ -691,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680615307471</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="SQLite implementation + CRT effect.">
+      <created>1680625179897</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1680625179897</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,7 +662,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic spring boot config added in maven." />
     <MESSAGE value="Migration to SL4J to have a functional logger with SpringBoot" />
     <MESSAGE value="Functional MVC" />
     <MESSAGE value="HTML basic quick start template added. CSS not working because i'm lazy." />
@@ -747,7 +686,8 @@
     <MESSAGE value="prettier.xml applied." />
     <MESSAGE value="Score timer was added." />
     <MESSAGE value="SQLite implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="SQLite implementation." />
+    <MESSAGE value="SQLite implementation + CRT effect." />
+    <option name="LAST_COMMIT_MESSAGE" value="SQLite implementation + CRT effect." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -770,7 +710,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
-          <line>267</line>
+          <line>301</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

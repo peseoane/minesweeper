@@ -4,6 +4,10 @@ Using a Model–view–controller (MVC) in Java 17.
 
 [toc]
 
+## UML
+
+![UML](README.assets/UML.svg)
+
 ## Guide to configure the basics
 
 To facilitate the debugging of the project, we will include a series of dependencies.

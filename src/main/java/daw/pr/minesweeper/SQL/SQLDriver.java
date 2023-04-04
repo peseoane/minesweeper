@@ -13,9 +13,9 @@ public class SQLDriver {
         ArrayList<String[]> result = new ArrayList<>();
 
         try (
-            Connection conn = DriverManager.getConnection(DATABASE_URL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query)
+                Connection conn = DriverManager.getConnection(DATABASE_URL);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query)
         ) {
             ResultSetMetaData rsmd = rs.getMetaData();
             int numColumns = rsmd.getColumnCount();
