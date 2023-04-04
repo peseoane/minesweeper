@@ -109,6 +109,32 @@ public class WebApp {
             html.append("<input type='submit' value='You Win'>");
             html.append("</form>");
         }
+
+        if (game.isGameOver() || game.isWin()) {
+            game.saveWinner();
+            html.append("<table class='hallFame'>");
+            html.append("<tr><th>ID</th><th>name</th><th>Date</th><th>score</th></tr>");
+            for (String[] row : game.getHallFame()) {
+                String id = row[0];
+                String name = row[1];
+                String date = row[2];
+                String score = row[3];
+
+                html
+                    .append("<tr><td>")
+                    .append(id)
+                    .append("</td><td>")
+                    .append(name)
+                    .append("</td><td>")
+                    .append(date)
+                    .append("</td><td>")
+                    .append(score)
+                    .append("</td></tr>");
+            }
+
+            html.append("</table>");
+        }
+
         html.append("<form action='/debug' method='get'>");
         html.append("<input class='debug' type='submit' value='\uD83D\uDEE0\uFE0F Debug panel'>");
         html.append("</form>");

@@ -9,11 +9,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
+    background: black;
 }
 
-button, select, input {
+button,
+select,
+input {
     font-family: 'Press Start 2P', cursive;
-    background-color: green;
+    background-color: #00aa00;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -25,7 +28,6 @@ button, select, input {
     cursor: pointer;
 }
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -36,9 +38,8 @@ button, select, input {
     margin: 0;
 }
 
-
 table {
-    border: white 1em solid;
+    background: black;
 }
 
 .mine {
@@ -56,7 +57,7 @@ table {
 @keyframes explode {
     0% {
         opacity: 1;
-        transform: scale(.75);
+        transform: scale(0.75);
     }
     50% {
         opacity: 0.75;
@@ -64,10 +65,9 @@ table {
     }
     100% {
         opacity: 1;
-        transform: scale(.75);
+        transform: scale(0.75);
     }
 }
-
 
 td {
     align-content: center;
@@ -76,7 +76,8 @@ td {
     margin: 0;
 }
 
-td, th {
+td,
+th {
     padding: 0;
     margin: 0;
 }
@@ -90,7 +91,7 @@ p {
 .cell {
     align-items: center;
     justify-content: center;
-    background-image: url("./assets/rock.webp");
+    background-image: url('./assets/rock.webp');
     background-repeat: no-repeat;
     background-size: cover;
     width: 5em;
@@ -105,7 +106,7 @@ p {
     font-size: 2em;
     font-weight: bold;
     text-align: center;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 10px white;
 }
 
 p:hover {
@@ -116,14 +117,16 @@ a {
     text-decoration: none;
 }
 
-.lines, .credits, .profile, .repo {
+.lines,
+.credits,
+.profile,
+.repo {
     padding: 1em;
     color: black;
     font-size: 1em;
     font-weight: bold;
     text-align: justify;
     text-shadow: none;
-
 }
 
 .debug {
@@ -133,7 +136,6 @@ a {
     align-content: center;
     border: 1px solid black;
 }
-
 
 .panel {
     max-height: 30%;
@@ -146,4 +148,40 @@ a {
     color: white;
     overflow: auto;
     border: 1px solid white;
+}
+
+.hallFame {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+.hallFame td,
+.hallFame th {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+* {
+    color: white;
+    line-height: 1;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+a {
+    color: white;
+}
+
+@keyframes textflicker {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
 }

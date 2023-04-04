@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang='EN'>
-<head>
-    <title>Minesweeper</title>
-    <meta charset='UTF-8' />
-    <link rel='stylesheet' href='style.css' />
-</head>
-<body>
-<div class='container'>
-    <h1>Minesweeper</h1>
+<html lang="EN">
+    <head>
+        <title>Minesweeper</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Minesweeper</h1>
 
-    <h2>Game Over!</h2>
-    <p>You win!:(</p>
-    <div class='credits'>
-        <p class='profile'>Created by <a href='https://github.com/peseoane'>Pedro V. Seoane Prado</a></p>
-        <p class='repo'>
-            Check out the source code at
-            <a href='https://github.com/peseoane/minesweeper'>peseoane /minesweeper</a>
-        </p>
-    </div>
+            <h2>Game Over!</h2>
+            <p>You win!:(</p>
+            <div class="credits">
+                <p class="profile">Created by <a href="https://github.com/peseoane">Pedro V. Seoane Prado</a></p>
+                <p class="repo">
+                    Check out the source code at
+                    <a href="https://github.com/peseoane/minesweeper">peseoane /minesweeper</a>
+                </p>
+            </div>
 
-    <h3>Play again?</h3>
+            <h3>Play again?</h3>
 
-    <div id='inicializador'>
-        <form method='POST' action='/startGame'>
-            <label for='difficulty'>Select difficulty:</label>
-            <select name='difficulty' id='difficulty'>
-                <option value='EASY'>Easy</option>
-                <option value='MEDIUM'>Medium</option>
-                <option value='HARD'>Hard</option>
-            </select>
-            <button type='submit'>Start Game</button>
-        </form>
-    </div>
-</div>
-</body>
+            <div id="inicializador">
+                <form method="POST" action="/startGame">
+                    <label for="difficulty">Select difficulty:</label>
+                    <select name="difficulty" id="difficulty">
+                        <option value="EASY">Easy</option>
+                        <option value="MEDIUM">Medium</option>
+                        <option value="HARD">Hard</option>
+                    </select>
+                    <button type="submit">Start Game</button>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>
