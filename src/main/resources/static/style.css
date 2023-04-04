@@ -2,6 +2,7 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -12,7 +13,7 @@ body {
 
 button, select, input {
     font-family: 'Press Start 2P', cursive;
-    background-color: #4CAF50;
+    background-color: green;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -115,11 +116,34 @@ a {
     text-decoration: none;
 }
 
-.credits, .profile, .repo {
+.lines, .credits, .profile, .repo {
     padding: 1em;
-    color: white;
+    color: black;
     font-size: 1em;
     font-weight: bold;
-    text-align: center;
-    text-shadow: 0 0 10px black;
+    text-align: justify;
+    text-shadow: none;
+
+}
+
+.debug {
+    background-color: white;
+    color: black;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid black;
+}
+
+
+.panel {
+    max-height: 30%;
+    margin: 20%;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    overflow: auto;
+    border: 1px solid white;
 }

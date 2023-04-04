@@ -5,18 +5,17 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
-
 public class Game implements debug, gameplay {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Game.class);
     private final Difficulty difficulty;
     private final Cell[][] cells;
+    private final long initTime = System.currentTimeMillis();
     private boolean gameOver = false;
     private Score score;
     private String playerName;
     private int points, moves;
     private int scoreValue;
-    private final long initTime = System.currentTimeMillis();
 
     public Game(Difficulty difficulty, String playerName) {
         this.difficulty = difficulty;
@@ -127,11 +126,25 @@ public class Game implements debug, gameplay {
 
         for (Cell[] row : cells) {
             for (Cell cell : row) {
-                sb.append(" ").append(cell.getStateSelf());
+                if (cell.getStateSelf() == StateSelf.MINE) {
+                    sb.append("*");
+                } else {
+                    sb.append(cell.getMinesAround());
+                }
             }
-            sb.append("\n");
+            sb.append(System.getProperty("line.separator"));
         }
-        sb.append("    }").append(", difficulty=").append(difficulty).append('}');
+        sb
+                .append("    }")
+                .append("\n, difficulty=")
+                .append(difficulty)
+                .append('}')
+                .append(gameOver ? " Game Over " : " Game not over ")
+                .append(" Playername: ")
+                .append(playerName)
+                .append(" Score: " + scoreValue)
+                .append(" Moves: " + moves)
+                .append(" Time: " + (System.currentTimeMillis() - initTime) / 1000);
         return sb.toString();
     }
 
@@ -153,7 +166,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy... also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -195,7 +215,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -212,7 +239,9 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf());
+                    LOGGER.debug(
+                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
+                    );
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -234,7 +263,16 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        LOGGER.debug("Cell: " + cell.getRow() + " - " + cell.getColumn() + " - " + cell.getStateSelf() + " - " + cell.getStateCanvas());
+        LOGGER.debug(
+                "Cell: " +
+                        cell.getRow() +
+                        " - " +
+                        cell.getColumn() +
+                        " - " +
+                        cell.getStateSelf() +
+                        " - " +
+                        cell.getStateCanvas()
+        );
     }
 
     public void uncoverAllCells() {
@@ -263,7 +301,6 @@ public class Game implements debug, gameplay {
             }
         }
         moves++;
-
     }
 
     public boolean isWin() {
@@ -284,8 +321,13 @@ public class Game implements debug, gameplay {
         // Get a random cell
 
         // If the random cell is not a mine, set it as a mine
-        if (getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns())).getStateSelf() != StateSelf.MINE) {
-            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns())).setStateSelf(StateSelf.MINE);
+        if (
+                getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                        .getStateSelf() !=
+                        StateSelf.MINE
+        ) {
+            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                    .setStateSelf(StateSelf.MINE);
         }
     }
 

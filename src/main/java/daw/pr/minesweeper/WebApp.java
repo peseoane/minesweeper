@@ -19,7 +19,7 @@ public class WebApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
     Game game;
 
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @GetMapping("/")
     public String index() {
         return "index.html";
@@ -35,7 +35,7 @@ public class WebApp {
     }
 
     // generate ERROR page
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @GetMapping("/error")
     public String error() {
         LOGGER.error("El objeto game no ha sido inicializado");
@@ -49,14 +49,27 @@ public class WebApp {
         return game.getScoreValue();
     }
 
+    @GetMapping("/debug")
+    @ResponseBody
+    public String debug() {
+        StringBuilder debug = new StringBuilder();
+        debug.append(getTableHtml());
+        debug.append("<div class='panel'>");
+        debug.append(game.toString());
+        debug.append("</div>");
+        return debug.toString();
+    }
+
     @GetMapping("/getTableHtml")
     @ResponseBody
     public String getTableHtml() {
         final String ASSET_MINE = "assets/bomb.webp";
         StringBuilder html = new StringBuilder();
+        // add debug get button
 
         html.append("<link rel='stylesheet' href='./style.css'>");
         html.append("<div class='container'>");
+
         html.append("<div class='score'>");
         html.append("<div id='score' class='score'>Score: ").append(game.getScoreValue()).append("</div>");
         html.append("</div>");
@@ -70,8 +83,8 @@ public class WebApp {
                 html.append("<div class='cell'>");
                 html.append("<a href='/revealCell?row=").append(i).append("&column=").append(j).append("'>");
                 if (
-                        game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
-                                game.getCell(i, j).getStateSelf() == StateSelf.MINE
+                    game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
+                    game.getCell(i, j).getStateSelf() == StateSelf.MINE
                 ) {
                     html.append("<img class='mine' src='" + ASSET_MINE + "'>");
                 } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
@@ -96,7 +109,9 @@ public class WebApp {
             html.append("<input type='submit' value='You Win'>");
             html.append("</form>");
         }
-
+        html.append("<form action='/debug' method='get'>");
+        html.append("<input class='debug' type='submit' value='\uD83D\uDEE0\uFE0F Debug panel'>");
+        html.append("</form>");
         html.append("</div>");
 
         return html.toString();
@@ -113,7 +128,7 @@ public class WebApp {
         return "redirect:/getTableHtml";
     }
 
-    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
+    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
     @PostMapping("/gameOver")
     public String gameOver() {
         return "gameOver.html";
