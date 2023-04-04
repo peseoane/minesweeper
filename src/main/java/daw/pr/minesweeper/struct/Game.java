@@ -1,8 +1,10 @@
 package daw.pr.minesweeper.struct;
 
-import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+
 
 public class Game implements debug, gameplay {
 
@@ -10,14 +12,45 @@ public class Game implements debug, gameplay {
     private final Difficulty difficulty;
     private final Cell[][] cells;
     private boolean gameOver = false;
-    private int moves;
+    private Score score;
+    private String playerName;
+    private int points, moves;
+    private int scoreValue;
+    private final long initTime = System.currentTimeMillis();
 
-    public Game(Difficulty difficulty) {
+    public Game(Difficulty difficulty, String playerName) {
         this.difficulty = difficulty;
         this.cells = new Cell[difficulty.getRows()][difficulty.getColumns()];
         generateCanvas(difficulty);
-        // print cells
         printGame();
+        this.playerName = playerName;
+    }
+
+    public int getScoreValue() {
+        calculateScoreValue();
+        return scoreValue;
+    }
+
+    private void setScoreValue(int scoreValue) {
+        this.scoreValue = scoreValue;
+    }
+
+    private int minesFound() {
+        int minesFound = 0;
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                if (cell.getStateSelf() == StateSelf.MINE && cell.getStateCanvas() == StateCanvas.REVEALED) {
+                    minesFound++;
+                }
+            }
+        }
+        return minesFound;
+    }
+
+    private void calculateScoreValue() {
+        long elapsedTime = (System.currentTimeMillis() - initTime) / 1000;
+        int scoreValue = (int) (minesFound() * 100 - elapsedTime - moves);
+        setScoreValue((int) elapsedTime);
     }
 
     public int getRows() {
@@ -79,7 +112,7 @@ public class Game implements debug, gameplay {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
-                cells[i][j].setPosition(new int[] { i, j });
+                cells[i][j].setPosition(new int[]{i, j});
                 if (LOGGER.isDebugEnabled()) {
                     LOGGER.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
@@ -120,14 +153,7 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy... also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-            { -1, -1 },
-            { -1, 0 },
-            { -1, 1 },
-            { 0, -1 },
-            { 0, 1 },
-            { 1, -1 },
-            { 1, 0 },
-            { 1, 1 }
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -169,14 +195,7 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-            { -1, -1 },
-            { -1, 0 },
-            { -1, 1 },
-            { 0, -1 },
-            { 0, 1 },
-            { 1, -1 },
-            { 1, 0 },
-            { 1, 1 }
+                {- 1, - 1}, {- 1, 0}, {- 1, 1}, {0, - 1}, {0, 1}, {1, - 1}, {1, 0}, {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -193,9 +212,7 @@ public class Game implements debug, gameplay {
                 if (isValidCell(x, y) && getCell(x, y).getStateSelf() == StateSelf.MINE) {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
-                    LOGGER.debug(
-                        "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
-                    );
+                    LOGGER.debug("Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf());
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -217,16 +234,7 @@ public class Game implements debug, gameplay {
 
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
-        LOGGER.debug(
-            "Cell: " +
-            cell.getRow() +
-            " - " +
-            cell.getColumn() +
-            " - " +
-            cell.getStateSelf() +
-            " - " +
-            cell.getStateCanvas()
-        );
+        LOGGER.debug("Cell: " + cell.getRow() + " - " + cell.getColumn() + " - " + cell.getStateSelf() + " - " + cell.getStateCanvas());
     }
 
     public void uncoverAllCells() {
@@ -255,6 +263,7 @@ public class Game implements debug, gameplay {
             }
         }
         moves++;
+
     }
 
     public boolean isWin() {
@@ -275,13 +284,8 @@ public class Game implements debug, gameplay {
         // Get a random cell
 
         // If the random cell is not a mine, set it as a mine
-        if (
-            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                .getStateSelf() !=
-            StateSelf.MINE
-        ) {
-            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                .setStateSelf(StateSelf.MINE);
+        if (getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns())).getStateSelf() != StateSelf.MINE) {
+            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns())).setStateSelf(StateSelf.MINE);
         }
     }
 
@@ -338,6 +342,10 @@ public class Game implements debug, gameplay {
             return;
         }
         uncoverClickedCell(cell);
+    }
+
+    public void setPlayerName(String name) {
+        this.playerName = name;
     }
     // --Commented out by Inspection START (04/04/2023 11:34):
     //    public Cell[][] getCells() {

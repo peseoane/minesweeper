@@ -19,7 +19,7 @@ public class WebApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
     Game game;
 
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @GetMapping("/")
     public String index() {
         return "index.html";
@@ -27,20 +27,26 @@ public class WebApp {
 
     @PostMapping("/startGame")
     @ResponseBody
-    public String startGame(@RequestParam("difficulty") String difficultyString) {
+    public String startGame(@RequestParam("difficulty") String difficultyString, @RequestParam("name") String name) {
         Difficulty difficulty = Difficulty.valueOf(difficultyString.toUpperCase());
-        game = new Game(difficulty);
+        game = new Game(difficulty, name);
         LOGGER.info("Starting game with difficulty: " + difficulty);
         return getTableHtml();
     }
 
     // generate ERROR page
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @GetMapping("/error")
     public String error() {
         LOGGER.error("El objeto game no ha sido inicializado");
 
         return "index.html";
+    }
+
+    @GetMapping("/getScoreValue")
+    @ResponseBody
+    public int getScoreValue() {
+        return game.getScoreValue();
     }
 
     @GetMapping("/getTableHtml")
@@ -51,17 +57,21 @@ public class WebApp {
 
         html.append("<link rel='stylesheet' href='./style.css'>");
         html.append("<div class='container'>");
+        html.append("<div class='score'>");
+        html.append("<div id='score' class='score'>Score: ").append(game.getScoreValue()).append("</div>");
+        html.append("</div>");
         html.append("<table>");
 
         for (int i = 0; i < game.getRows(); i++) {
             html.append("<tr>");
             for (int j = 0; j < game.getColumns(); j++) {
                 html.append("<td>");
+
                 html.append("<div class='cell'>");
                 html.append("<a href='/revealCell?row=").append(i).append("&column=").append(j).append("'>");
                 if (
-                    game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
-                    game.getCell(i, j).getStateSelf() == StateSelf.MINE
+                        game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
+                                game.getCell(i, j).getStateSelf() == StateSelf.MINE
                 ) {
                     html.append("<img class='mine' src='" + ASSET_MINE + "'>");
                 } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
@@ -103,7 +113,7 @@ public class WebApp {
         return "redirect:/getTableHtml";
     }
 
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @PostMapping("/gameOver")
     public String gameOver() {
         return "gameOver.html";
