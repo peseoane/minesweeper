@@ -4,6 +4,8 @@ Using a Model–view–controller (MVC) in Java 17.
 
 [toc]
 
+[demo.webm](https://user-images.githubusercontent.com/47398995/230037084-713d9f14-3497-4f14-bc1b-786f4d56294a.webm)
+
 ## UML
 
 ![UML](README.assets/UML.svg)

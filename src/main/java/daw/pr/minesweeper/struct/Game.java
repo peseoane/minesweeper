@@ -151,8 +151,7 @@ public class Game implements debug, gameplay {
                 .append('}')
                 .append(gameOver ? " Game Over " : " Game not over ")
                 .append(" Playername: ")
-                .append(playerName)
-                .append(" Score: " + scoreValue)
+                .append(playerName).append(" Score: ").append(scoreValue)
                 .append(" Moves: " + moves)
                 .append(" Time: " + (System.currentTimeMillis() - initTime) / 1000);
         return sb.toString();
