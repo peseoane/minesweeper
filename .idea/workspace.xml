@@ -8,19 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="SQLite implementation + CRT effect.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQL.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/minesweeper.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/struct.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/webApp.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/daw/pr/minesweeper/minesweeper.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minesweeper.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/minesweeper.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/newUI/board.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/newUI/board.html" afterDir="false" />
     </list>
     <list id="9315a1a7-14cf-4c56-852e-61c38b59fc51" name="generateScore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +83,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "devel-gui",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-17",
     "last_opened_file_path": "C:/git/minesweeper/src/main/resources/static/assets",
@@ -156,6 +144,13 @@
       <command value="mvn plantuml:generate" />
     </option>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
@@ -180,6 +175,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="minesweeper" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.App" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -648,7 +650,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="hotfix" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -708,11 +710,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
-          <line>301</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
