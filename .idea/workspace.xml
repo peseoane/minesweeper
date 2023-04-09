@@ -7,14 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Functional CSS.">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Migration progress new CSS to the main webapp.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <list id="9315a1a7-14cf-4c56-852e-61c38b59fc51" name="generateScore" comment="" />
@@ -163,7 +159,8 @@
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
       <module name="minesweeper" />
       <option name="PROGRAM_PARAMETERS" value="-d" />
-      <target name="WSL - Ubuntu" />
+      <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/Users/seoan/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.8109.175/jbr/bin /minesweeper" />
+      <target name="@@@LOCAL@@@" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daw.pr.minesweeper.*" />
@@ -308,14 +305,7 @@
       <workItem from="1680819056410" duration="127000" />
       <workItem from="1680883151463" duration="4215000" />
       <workItem from="1680975591513" duration="134000" />
-      <workItem from="1681040505694" duration="3053000" />
-    </task>
-    <task id="LOCAL-00012" summary="Docs and a short UML were added as a quick start guide for the coding stage.">
-      <created>1679938089211</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1679938089211</updated>
+      <workItem from="1681040505694" duration="9407000" />
     </task>
     <task id="LOCAL-00013" summary="Cells will be constructed via two Enums as a primary source for the logic basis.">
       <created>1679939034981</created>
@@ -653,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680884571556</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Migration progress new CSS to the main webapp.">
+      <created>1681043585327</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1681043585327</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="HTML basic quick start template added. CSS not working because i'm lazy." />
     <MESSAGE value="WIP (not working mouse listener)" />
     <MESSAGE value="Landing page funcional." />
     <MESSAGE value="Solved a bug that creates an array index error." />
@@ -709,7 +705,8 @@
     <MESSAGE value="SQLite implementation + CRT effect." />
     <MESSAGE value="Add boilerplate for the HTML template." />
     <MESSAGE value="Functional CSS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Functional CSS." />
+    <MESSAGE value="Migration progress new CSS to the main webapp." />
+    <option name="LAST_COMMIT_MESSAGE" value="Migration progress new CSS to the main webapp." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,6 +16,7 @@ public class WebApp {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
     Game game;
+    Boolean showDebug = false;
 
     @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @GetMapping("/")
@@ -29,7 +30,7 @@ public class WebApp {
         Difficulty difficulty = Difficulty.valueOf(difficultyString.toUpperCase());
         game = new Game(difficulty, name);
         LOGGER.info("Starting game with difficulty: " + difficulty);
-        return getTableHtml();
+        return mainHTMLgen();
     }
 
     // generate ERROR page
@@ -40,41 +41,76 @@ public class WebApp {
         return "index.html";
     }
 
+    private StringBuilder credits() {
+        StringBuilder html = new StringBuilder();
+        html.append("""
+                                <div class="credits">
+                                    <p class="profile">Created by <a href="github.com/peseoane">Pedro V. Seoane Prado</a></p>
+                                    <p class="repo">
+                                        Check out the source code at
+                                        <a href="github.com/peseoane/minesweeper">peseoane /minesweeper</a>
+                                    </p>
+                                </div>
+                            """);
+        return html;
+    }
+
     @GetMapping("/getScoreValue")
     @ResponseBody
     public int getScoreValue() {
         return game.getScoreValue();
     }
 
+    private void enableDebug() {
+        showDebug = true ? ! showDebug : showDebug;
+    }
+
     @GetMapping("/debug")
     @ResponseBody
     public String debug() {
-        String debug = getTableHtml() + "<div class='panel'>" + game.toString() + "</div>";
-        return debug;
+        enableDebug();
+        return mainHTMLgen();
+    }
+
+    private StringBuilder title() {
+        StringBuilder html = new StringBuilder();
+        html.append("<h1>Minesweeper</h1>");
+        return html;
     }
 
     @GetMapping("/getTableHtml")
     @ResponseBody
-    public String getTableHtml() {
+    public String mainHTMLgen() {
         StringBuilder html = new StringBuilder();
-        // add debug get button
+        html.append(applyCSSproduction(html))
+            .append("<div class='main'>")
+            .append(title())
+            .append(createMineBoard())
+            .append(isGameOver())
+            .append(generateScoreBoard())
+            .append(debugButton())
+            .append(printDebugPanel())
+            .append(credits())
+            .append("</div>");
+        return html.toString();
+    }
 
-        html.append(applyCSSproduction(html));
-        html.append("<div class='container'>");
+    private String printDebugPanel() {
+        return showDebug == true ? "<div class='debug'>" + game.toString() + "</div>" : "";
+    }
 
-        html.append(createMineBoard());
+    private StringBuilder debugButton() {
+        StringBuilder html = new StringBuilder();
+        html.append("<div class='debugButton'>");
+        html.append("<form action='/debug' method='get'>");
+        html.append("<input class='debugInput' type='submit' value='\uD83D\uDEE0\uFE0F Debug panel'>");
+        html.append("</form>");
+        html.append("</div>");
+        return html;
+    }
 
-
-        if (game.isGameOver()) {
-            html.append("<form action='/gameOver.html' method='get'>");
-            html.append("<input type='submit' value='Game Over'>");
-            html.append("</form>");
-        } else if (game.isWin()) {
-            html.append("<form action='/win.html' method='get'>");
-            html.append("<input type='submit' value='You Win'>");
-            html.append("</form>");
-        }
-
+    private StringBuilder generateScoreBoard() {
+        StringBuilder html = new StringBuilder();
         if (game.isGameOver() || game.isWin()) {
             game.saveWinner();
             html.append("<table class='hallFame'>");
@@ -98,13 +134,21 @@ public class WebApp {
 
             html.append("</table>");
         }
+        return html;
+    }
 
-        html.append("<form action='/debug' method='get'>");
-        html.append("<input class='debug' type='submit' value='\uD83D\uDEE0\uFE0F Debug panel'>");
-        html.append("</form>");
-        html.append("</div>");
-
-        return html.toString();
+    private StringBuilder isGameOver() {
+        StringBuilder html = new StringBuilder();
+        if (game.isGameOver()) {
+            html.append("<form action='/gameOver.html' method='get'>")
+                .append("<input type='submit' value='Game Over'>")
+                .append("</form>");
+        } else if (game.isWin()) {
+            html.append("<form action='/win.html' method='get'>")
+                .append("<input type='submit' value='You Win'>")
+                .append("</form>");
+        }
+        return html;
     }
 
     private StringBuilder applyCSSproduction(StringBuilder html) {
@@ -163,15 +207,41 @@ public class WebApp {
 
         if (! game.isHidden(row, column)) {
             if (game.isMine(row, column)) {
-                final String mine = ".assets/bomb.webp";
+                final String mine = "assets/bomb.webp";
                 cell.append("<img src='" + mine + "' alt='mine'>");
             } else {
-                cell.append(game.getCell(row, column).getMinesAround());
+                switch (game.getCell(row, column).getMinesAround()) {
+                    case 0 -> cell.append("<span class='numero zero'>")
+                                  .append("</span>");
+                    case 1 -> cell.append("<span class='numero one'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 2 -> cell.append("<span class='numero two'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 3 -> cell.append("<span class='numero three'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 4 -> cell.append("<span class='numero four'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 5 -> cell.append("<span class='numero five'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 6 -> cell.append("<span class='numero six'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 7 -> cell.append("<span class='numero seven'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                    case 8 -> cell.append("<span class='numero eight'>")
+                                  .append(game.getCell(row, column).getMinesAround())
+                                  .append("</span>");
+                }
             }
         }
 
         cell.append("</div>").append("</a>");
         return cell;
     }
-
 }
