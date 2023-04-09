@@ -251,7 +251,7 @@ public class Game implements debug, gameplay {
                     adjacentMines.add(getCell(x, y));
                     LOGGER.debug(
                             "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
-                    );
+                                );
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -282,7 +282,7 @@ public class Game implements debug, gameplay {
                         cell.getStateSelf() +
                         " - " +
                         cell.getStateCanvas()
-        );
+                    );
     }
 
     public void uncoverAllCells() {
@@ -359,6 +359,14 @@ public class Game implements debug, gameplay {
             }
         }
         moves++;
+    }
+
+    public boolean isMine(int row, int column) {
+        return getCell(row, column).getStateSelf().equals(StateSelf.MINE) ? true : false;
+    }
+
+    public boolean isHidden(int row, int column) {
+        return getCell(row, column).getStateCanvas().equals(StateCanvas.HIDDEN) ? true : false;
     }
 
     public void calculateNumbers() {

@@ -2,8 +2,6 @@ package daw.pr.minesweeper;
 
 import daw.pr.minesweeper.struct.Difficulty;
 import daw.pr.minesweeper.struct.Game;
-import daw.pr.minesweeper.struct.StateCanvas;
-import daw.pr.minesweeper.struct.StateSelf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,7 +17,7 @@ public class WebApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebApp.class);
     Game game;
 
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @GetMapping("/")
     public String index() {
         return "index.html";
@@ -35,11 +33,10 @@ public class WebApp {
     }
 
     // generate ERROR page
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @GetMapping("/error")
     public String error() {
         LOGGER.error("El objeto game no ha sido inicializado");
-
         return "index.html";
     }
 
@@ -52,53 +49,21 @@ public class WebApp {
     @GetMapping("/debug")
     @ResponseBody
     public String debug() {
-        StringBuilder debug = new StringBuilder();
-        debug.append(getTableHtml());
-        debug.append("<div class='panel'>");
-        debug.append(game.toString());
-        debug.append("</div>");
-        return debug.toString();
+        String debug = getTableHtml() + "<div class='panel'>" + game.toString() + "</div>";
+        return debug;
     }
 
     @GetMapping("/getTableHtml")
     @ResponseBody
     public String getTableHtml() {
-        final String ASSET_MINE = "assets/bomb.webp";
         StringBuilder html = new StringBuilder();
         // add debug get button
 
-        html.append("<link rel='stylesheet' href='./style.css'>");
+        html.append(applyCSSproduction(html));
         html.append("<div class='container'>");
 
-        html.append("<div class='score'>");
-        html.append("<div id='score' class='score'>Score: ").append(game.getScoreValue()).append("</div>");
-        html.append("</div>");
-        html.append("<table>");
+        html.append(createMineBoard());
 
-        for (int i = 0; i < game.getRows(); i++) {
-            html.append("<tr>");
-            for (int j = 0; j < game.getColumns(); j++) {
-                html.append("<td>");
-
-                html.append("<div class='cell'>");
-                html.append("<a href='/revealCell?row=").append(i).append("&column=").append(j).append("'>");
-                if (
-                    game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED &&
-                    game.getCell(i, j).getStateSelf() == StateSelf.MINE
-                ) {
-                    html.append("<img class='mine' src='" + ASSET_MINE + "'>");
-                } else if (game.getCell(i, j).getStateCanvas() == StateCanvas.REVEALED) {
-                    html.append("<p class='number'>").append(game.getCell(i, j).getMinesAround()).append("</p>");
-                } else {
-                    html.append("<p>?</p>");
-                }
-
-                html.append("</a>");
-                html.append("</td>");
-            }
-            html.append("</tr>");
-        }
-        html.append("</table>");
 
         if (game.isGameOver()) {
             html.append("<form action='/gameOver.html' method='get'>");
@@ -120,8 +85,7 @@ public class WebApp {
                 String date = row[2];
                 String score = row[3];
 
-                html
-                    .append("<tr><td>")
+                html.append("<tr><td>")
                     .append(id)
                     .append("</td><td>")
                     .append(name)
@@ -143,6 +107,11 @@ public class WebApp {
         return html.toString();
     }
 
+    private StringBuilder applyCSSproduction(StringBuilder html) {
+        html.append("<link rel='stylesheet' href='./style.css'>");
+        return html;
+    }
+
     @SuppressWarnings("SameReturnValue")
     @GetMapping("/revealCell")
     public String revealCell(@RequestParam int row, @RequestParam int column) {
@@ -154,9 +123,55 @@ public class WebApp {
         return "redirect:/getTableHtml";
     }
 
-    @SuppressWarnings({ "SpringMVCViewInspection", "SameReturnValue" })
+    @SuppressWarnings({"SpringMVCViewInspection", "SameReturnValue"})
     @PostMapping("/gameOver")
     public String gameOver() {
         return "gameOver.html";
     }
+
+    private StringBuilder createMineBoard() {
+        StringBuilder mineBoard = new StringBuilder();
+        mineBoard.append("<div class='game'>");
+        for (int i = 0; i < game.getRows(); i++) {
+            mineBoard = createParentDiv(mineBoard, "row", createRow(i));
+        }
+        mineBoard.append("</div>");
+        return mineBoard;
+    }
+
+    private StringBuilder createParentDiv(StringBuilder baseHtml, String divClass, StringBuilder insideDiv) {
+        baseHtml.append("<div class='").append(divClass).append("'>").append(insideDiv).append("</div>");
+        return baseHtml;
+    }
+
+    private StringBuilder createRow(int row) {
+        StringBuilder rowHtml = new StringBuilder();
+        for (int i = 0; i < game.getColumns(); i++) {
+            rowHtml.append(createCell(row, i));
+        }
+        return rowHtml;
+    }
+
+    private StringBuilder createCell(int row, int column) {
+        StringBuilder cell = new StringBuilder();
+        cell.append("<a href='/revealCell?row=")
+            .append(row)
+            .append("&column=")
+            .append(column)
+            .append("'>")
+            .append("<div class='cell'>");
+
+        if (! game.isHidden(row, column)) {
+            if (game.isMine(row, column)) {
+                final String mine = ".assets/bomb.webp";
+                cell.append("<img src='" + mine + "' alt='mine'>");
+            } else {
+                cell.append(game.getCell(row, column).getMinesAround());
+            }
+        }
+
+        cell.append("</div>").append("</a>");
+        return cell;
+    }
+
 }
