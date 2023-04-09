@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Migration progress new CSS to the main webapp.">
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Webapp migrada + nuevo CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
@@ -305,14 +305,7 @@
       <workItem from="1680819056410" duration="127000" />
       <workItem from="1680883151463" duration="4215000" />
       <workItem from="1680975591513" duration="134000" />
-      <workItem from="1681040505694" duration="9407000" />
-    </task>
-    <task id="LOCAL-00013" summary="Cells will be constructed via two Enums as a primary source for the logic basis.">
-      <created>1679939034981</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679939034981</updated>
+      <workItem from="1681040505694" duration="10793000" />
     </task>
     <task id="LOCAL-00014" summary="Removed obsolete JavaDoc.">
       <created>1679939056768</created>
@@ -650,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681043585327</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Webapp migrada + nuevo CSS">
+      <created>1681051177388</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1681051177388</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="WIP (not working mouse listener)" />
     <MESSAGE value="Landing page funcional." />
     <MESSAGE value="Solved a bug that creates an array index error." />
     <MESSAGE value="WIP" />
@@ -706,7 +705,8 @@
     <MESSAGE value="Add boilerplate for the HTML template." />
     <MESSAGE value="Functional CSS." />
     <MESSAGE value="Migration progress new CSS to the main webapp." />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration progress new CSS to the main webapp." />
+    <MESSAGE value="Webapp migrada + nuevo CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Webapp migrada + nuevo CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

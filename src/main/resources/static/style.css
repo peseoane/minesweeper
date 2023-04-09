@@ -17,7 +17,6 @@ body {
     height: 100vh;
     max-width: 100%;
 }
-}
 
 .head {
     display: flex;
@@ -157,8 +156,25 @@ a {
     text-decoration: none;
 }
 
-.numero {
-    outline: 1px solid white;
+.mine {
+    animation-name: explode;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.8);
+        filter: brightness(1) hue-rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1) hue-rotate(50deg);
+    }
+    100% {
+        transform: scale(0.8);
+        filter: brightness(1) hue-rotate(0deg);
+    }
 }
 
 .one {
@@ -191,4 +207,26 @@ a {
 
 .eight {
     color: black;
+}
+
+input {
+    font-family: 'Press Start 2P';
+    font-size: 1em;
+}
+
+input[type="submit"].gameover {
+    margin-top: 1rem;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"].debugInput {
+    background-color: green;
+    color: white;
+    padding: 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
 }

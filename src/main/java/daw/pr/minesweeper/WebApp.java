@@ -141,11 +141,11 @@ public class WebApp {
         StringBuilder html = new StringBuilder();
         if (game.isGameOver()) {
             html.append("<form action='/gameOver.html' method='get'>")
-                .append("<input type='submit' value='Game Over'>")
+                .append("<input class='gameover' type='submit' value='Game Over'>")
                 .append("</form>");
         } else if (game.isWin()) {
-            html.append("<form action='/win.html' method='get'>")
-                .append("<input type='submit' value='You Win'>")
+            html.append("<form  action='/win.html' method='get'>")
+                .append("<input class='gameover' type='submit' value='You Win'>")
                 .append("</form>");
         }
         return html;
@@ -208,7 +208,7 @@ public class WebApp {
         if (! game.isHidden(row, column)) {
             if (game.isMine(row, column)) {
                 final String mine = "assets/bomb.webp";
-                cell.append("<img src='" + mine + "' alt='mine'>");
+                cell.append("<img class='mine' src='" + mine + "' alt='mine'>");
             } else {
                 switch (game.getCell(row, column).getMinesAround()) {
                     case 0 -> cell.append("<span class='numero zero'>")
