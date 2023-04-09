@@ -202,9 +202,12 @@ public class WebApp {
             .append(row)
             .append("&column=")
             .append(column)
-            .append("'>")
-            .append("<div class='cell'>");
-
+            .append("'>");
+        if (game.isHidden(row, column)) {
+            cell.append("<div class='cell'>");
+        } else {
+            cell.append("<div class='cellLight'>");
+        }
         if (! game.isHidden(row, column)) {
             if (game.isMine(row, column)) {
                 final String mine = "assets/bomb.webp";

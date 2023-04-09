@@ -43,7 +43,7 @@ body {
     flex-direction: row;
 }
 
-.cell {
+.cell, .cellLight {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +60,11 @@ body {
     text-align: center;
     text-decoration: none;
     text-outline: 1em white;
+    background: url("assets/rock.webp");
+}
+
+.cellLight {
+    border: 0.5em outset #bebebe;
     background: url("assets/rock.webp");
 }
 
@@ -175,6 +180,10 @@ a {
         transform: scale(0.8);
         filter: brightness(1) hue-rotate(0deg);
     }
+}
+
+.zero {
+    background-color: #000000;
 }
 
 .one {
