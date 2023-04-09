@@ -1,8 +1,8 @@
-.main, .footer {
+.main,
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .head {
@@ -20,7 +20,6 @@
     text-align: center;
 }
 
-
 .row {
     display: flex;
     flex-direction: row;
@@ -35,7 +34,7 @@
     height: 3em;
     background-color: #e0e0e0;
     color: #000000;
-    border: .5em outset #6D6D6D;
+    border: 0.5em outset #6d6d6d;
     font-style: normal;
     font-weight: bolder;
     font-variant: normal;
@@ -46,7 +45,6 @@
 .cell a {
     display: block;
 }
-
 
 .debug {
     margin: 3em;

@@ -43,7 +43,8 @@ body {
     flex-direction: row;
 }
 
-.cell, .cellLight {
+.cell,
+.cellLight {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,19 +54,19 @@ body {
     max-width: 6em;
     height: 3em;
     color: #000000;
-    border: 0.5em outset #6d6d6d;
+    border: 0.5em outset #bebebe;
     font-style: normal;
     font-weight: bolder;
     font-variant: normal;
     text-align: center;
     text-decoration: none;
     text-outline: 1em white;
-    background: url("assets/rock.webp");
+    background: url('assets/rock.webp');
 }
 
 .cellLight {
-    border: 0.5em outset #bebebe;
-    background: url("assets/rock.webp");
+    border: 0.5em outset #6d6d6d;
+    background: url('assets/rock.webp');
 }
 
 .cell a {
@@ -223,7 +224,7 @@ input {
     font-size: 1em;
 }
 
-input[type="submit"].gameover {
+input[type='submit'].gameover {
     margin-top: 1rem;
     background-color: red;
     color: white;
@@ -232,7 +233,7 @@ input[type="submit"].gameover {
     transition: all 0.3s ease-in-out;
 }
 
-input[type="submit"].debugInput {
+input[type='submit'].debugInput {
     background-color: green;
     color: white;
     padding: 1rem;
