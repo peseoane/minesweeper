@@ -75,6 +75,7 @@ public class Cell implements debug {
         return position[1];
     }
 
+
     @Override
     public String toString() {
         return "Cell{" + "stateCanvas=" + stateCanvas + ", stateSelf=" + stateSelf + '}';

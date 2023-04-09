@@ -7,13 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Minor updates (docs, pom...)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newUI/board.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newUI/newUI.css" afterDir="false" />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="Webapp migrada + nuevo CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <list id="9315a1a7-14cf-4c56-852e-61c38b59fc51" name="generateScore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +89,7 @@
     "git-widget-placeholder": "devel-gui",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-17",
-    "last_opened_file_path": "C:/git/minesweeper/src",
+    "last_opened_file_path": "C:/git/minesweeper/src/main/resources/static/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,11 +98,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\git\\minesweeper\\node_modules\\prettier",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.37471265",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.scopes",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "spring.configuration.checksum": "2eb09b1b77ec8c1da05d099b42b0cbee",
     "vue.rearranger.settings.migration": "true"
   },
@@ -126,11 +124,11 @@
       <recent name="C:\git\minesweeper\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\git\minesweeper\src\main\resources\static\newUI" />
-      <recent name="C:\git\minesweeper\src\main\resources\static" />
       <recent name="C:\git\minesweeper\src\main\java\daw\pr\minesweeper" />
       <recent name="C:\git\minesweeper" />
       <recent name="C:\git\minesweeper\src\main\java\daw\pr\minesweeper\SQL" />
+      <recent name="C:\git\minesweeper\src\main\resources\static" />
+      <recent name="C:\git\minesweeper\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -145,15 +143,24 @@
       <command value="mvn compile" />
       <command value="mvn install" />
       <command value="mvn javadoc:javadoc " />
-      <command value="mvn plantuml:generate" />
       <command value="mvn clean package " />
+      <command value="mvn plantuml:generate" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
       <module name="minesweeper" />
       <option name="PROGRAM_PARAMETERS" value="-d" />
+      <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/Users/seoan/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.8109.175/jbr/bin /minesweeper" />
+      <target name="@@@LOCAL@@@" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daw.pr.minesweeper.*" />
@@ -177,9 +184,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="minesweeper" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinesweeperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="minesweeper" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.MinesweeperApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="daw.pr.minesweeper.*" />
@@ -189,24 +203,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="Docker Image (1)" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="sha256:0ecddd0f9e2fc914dae234fcabbb45fc3d5a4b000ba6153e625a69722d06bd25" />
-          <option name="containerName" value="" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Docker Image (2)" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="peseoane/minesweeper-image:alpine" />
-          <option name="containerName" value="" />
-        </settings>
-      </deployment>
-      <method v="2" />
     </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-default">
       <deployment type="dockerfile">
@@ -229,13 +225,31 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="minesweeper-image:latest" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="minesweeper-image:latest" />
+          <option name="containerName" value="minesweeper" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="LaunchBrowser.Before.Run" url="localhost:8080" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Docker.minesweeper-image:latest" />
+      <item itemvalue="Spring Boot.App" />
+      <item itemvalue="Spring Boot.MinesweeperApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Docker Image (2)" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Spring Boot.App" />
-        <item itemvalue="Docker.Docker Image (1)" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.minesweeper-image:latest" />
+        <item itemvalue="Spring Boot.MinesweeperApplication" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -286,33 +300,12 @@
       <workItem from="1680599530678" duration="1680000" />
       <workItem from="1680605485215" duration="9815000" />
       <workItem from="1680622454085" duration="2987000" />
-      <workItem from="1680629420021" duration="3995000" />
-      <workItem from="1680715871869" duration="4392000" />
-      <workItem from="1680722347837" duration="545000" />
-      <workItem from="1680796679060" duration="25000" />
-      <workItem from="1680798552302" duration="678000" />
-      <workItem from="1680803506538" duration="709000" />
-    </task>
-    <task id="LOCAL-00011" summary="Idea plugin MD config added.">
-      <created>1679938061904</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1679938061904</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Docs and a short UML were added as a quick start guide for the coding stage.">
-      <created>1679938089211</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1679938089211</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Cells will be constructed via two Enums as a primary source for the logic basis.">
-      <created>1679939034981</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679939034981</updated>
+      <workItem from="1680629420021" duration="2782000" />
+      <workItem from="1680804905131" duration="263000" />
+      <workItem from="1680819056410" duration="127000" />
+      <workItem from="1680883151463" duration="4215000" />
+      <workItem from="1680975591513" duration="134000" />
+      <workItem from="1681040505694" duration="10793000" />
     </task>
     <task id="LOCAL-00014" summary="Removed obsolete JavaDoc.">
       <created>1679939056768</created>
@@ -629,14 +622,35 @@
       <option name="project" value="LOCAL" />
       <updated>1680625179897</updated>
     </task>
-    <task id="LOCAL-00059" summary="Minor updates (docs, pom...)">
-      <created>1680632397227</created>
+    <task id="LOCAL-00059" summary="Add boilerplate for the HTML template.">
+      <created>1680804403393</created>
       <option name="number" value="00059" />
       <option name="presentableId" value="LOCAL-00059" />
       <option name="project" value="LOCAL" />
-      <updated>1680632397227</updated>
+      <updated>1680804403393</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Functional CSS.">
+      <created>1680884571556</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1680884571556</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Migration progress new CSS to the main webapp.">
+      <created>1681043585327</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1681043585327</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Webapp migrada + nuevo CSS">
+      <created>1681051177388</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1681051177388</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +667,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="hotfix" />
+                        <option value="devel-gui" />
                       </list>
                     </value>
                   </entry>
@@ -667,9 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Functional MVC" />
-    <MESSAGE value="HTML basic quick start template added. CSS not working because i'm lazy." />
-    <MESSAGE value="WIP (not working mouse listener)" />
     <MESSAGE value="Landing page funcional." />
     <MESSAGE value="Solved a bug that creates an array index error." />
     <MESSAGE value="WIP" />
@@ -691,8 +702,11 @@
     <MESSAGE value="Score timer was added." />
     <MESSAGE value="SQLite implementation." />
     <MESSAGE value="SQLite implementation + CRT effect." />
-    <MESSAGE value="Minor updates (docs, pom...)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates (docs, pom...)" />
+    <MESSAGE value="Add boilerplate for the HTML template." />
+    <MESSAGE value="Functional CSS." />
+    <MESSAGE value="Migration progress new CSS to the main webapp." />
+    <MESSAGE value="Webapp migrada + nuevo CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Webapp migrada + nuevo CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,11 +727,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java</url>
-          <line>301</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

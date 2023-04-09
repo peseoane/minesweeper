@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 FROM alpine
+=======
+FROM openjdk:17-jdk-alpine
+MAINTAINER "info@pedroseoaneprado.es"
+EXPOSE 8080
+COPY target/minesweeper-0.1.jar /minesweeper-0.1.jar
+ENTRYPOINT ["java", "-jar", "/minesweeper-0.1.jar"]
+>>>>>>> devel-gui
 
 # Instalamos las dependencias necesarias para OpenJDK 17
 RUN apk add --no-cache openjdk17

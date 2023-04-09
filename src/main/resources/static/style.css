@@ -1,146 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* NEW CODE */
+
 body {
+    font-family: 'Press Start 2P';
+    background-color: #000000;
+    color: white;
+}
+
+.main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: 'Press Start 2P', cursive;
-    background: black;
+    height: 100vh;
+    max-width: 100%;
 }
 
-button,
-select,
-input {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #00aa00;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.container {
+.head {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
-    padding: 0;
-    margin: 0;
 }
 
-table {
-    background: black;
-}
-
-.mine {
-    background-image: url('./assets/bomb.webp');
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    animation-name: explode;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes explode {
-    0% {
-        opacity: 1;
-        transform: scale(0.75);
-    }
-    50% {
-        opacity: 0.75;
-        transform: scale(1.25);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(0.75);
-    }
-}
-
-td {
-    align-content: center;
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-td,
-th {
-    padding: 0;
-    margin: 0;
-}
-
-p {
-    padding: 0;
-    margin: 0;
     text-align: center;
+}
+
+.game .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 }
 
 .cell {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('./assets/rock.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 5em;
-    height: 5em;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-p {
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
+    width: 10%;
+    min-width: 3em;
+    max-width: 6em;
+    height: 3em;
+    color: #000000;
+    border: 0.5em outset #6d6d6d;
+    font-style: normal;
+    font-weight: bolder;
+    font-variant: normal;
     text-align: center;
-    text-shadow: 0 0 10px white;
-}
-
-p:hover {
-    text-shadow: 0 0 10px red;
-}
-
-a {
     text-decoration: none;
+    text-outline: 1em white;
+    background: url("assets/rock.webp");
 }
 
-.lines,
-.credits,
-.profile,
-.repo {
+.cell a {
+    display: block;
+}
+
+.debugInput {
     padding: 1em;
-    color: black;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: justify;
-    text-shadow: none;
+    margin: 1em;
 }
 
 .debug {
-    background-color: white;
-    color: black;
-    justify-content: center;
-    align-content: center;
-    border: 1px solid black;
-}
-
-.panel {
-    max-height: 30%;
-    margin: 20%;
-    padding: 1em;
     font-size: 1em;
     font-weight: bold;
     font-family: monospace;
@@ -148,40 +80,153 @@ a {
     color: white;
     overflow: auto;
     border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    font-family: monospace;
 }
 
-.hallFame {
-    border-collapse: collapse;
-    margin: 10px;
-}
-
-.hallFame td,
-.hallFame th {
-    padding: 8px;
+.credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border: 1px solid black;
+    margin: 0.5em;
+    font-size: 0.5em;
 }
 
-* {
-    color: white;
-    line-height: 1;
-    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
-    letter-spacing: 0.125em;
-    animation-duration: 0.01s;
-    animation-name: textflicker;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+img {
+    width: 90%;
+    height: 90%;
+}
+
+.splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formulario {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.formulario label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formulario select,
+.formulario input[type='text'] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.formulario button[type='submit'] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.formulario button[type='submit']:hover {
+    background-color: #3e8e41;
 }
 
 a {
-    color: white;
+    text-decoration: none;
 }
 
-@keyframes textflicker {
-    from {
-        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+.mine {
+    animation-name: explode;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.8);
+        filter: brightness(1) hue-rotate(0deg);
     }
-    to {
-        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1) hue-rotate(50deg);
     }
+    100% {
+        transform: scale(0.8);
+        filter: brightness(1) hue-rotate(0deg);
+    }
+}
+
+.one {
+    color: blue;
+}
+
+.two {
+    color: green;
+}
+
+.three {
+    color: orange;
+}
+
+.four {
+    color: orange;
+}
+
+.five {
+    color: red;
+}
+
+.six {
+    color: mediumvioletred;
+}
+
+.seven {
+    color: purple;
+}
+
+.eight {
+    color: black;
+}
+
+input {
+    font-family: 'Press Start 2P';
+    font-size: 1em;
+}
+
+input[type="submit"].gameover {
+    margin-top: 1rem;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"].debugInput {
+    background-color: green;
+    color: white;
+    padding: 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
 }
