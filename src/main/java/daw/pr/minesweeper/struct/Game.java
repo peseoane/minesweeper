@@ -1,9 +1,10 @@
 package daw.pr.minesweeper.struct;
 
 import daw.pr.minesweeper.SQL.SQLDriver;
-import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 
 public class Game implements debug, gameplay {
 
@@ -74,7 +75,7 @@ public class Game implements debug, gameplay {
     }
 
     public ArrayList<String[]> getHallFame() {
-        return sql.ejecutarQuery("SELECT * FROM scores ORDER BY score ASC LIMIT 10");
+        return sql.ejecutarQuery("SELECT * FROM scores ORDER BY score DESC LIMIT 10");
     }
 
     private void generateCanvas(Difficulty difficulty) {
@@ -120,7 +121,7 @@ public class Game implements debug, gameplay {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
                 cells[i][j] = new Cell();
-                cells[i][j].setPosition(new int[] { i, j });
+                cells[i][j].setPosition(new int[]{i, j});
                 if (LOGGER.isDebugEnabled()) {
                     LOGGER.debug("Cell: " + i + " - " + j + " - " + cells[i][j]);
                 }
@@ -144,17 +145,17 @@ public class Game implements debug, gameplay {
             sb.append(System.getProperty("line.separator"));
         }
         sb
-            .append("    }")
-            .append("\n, difficulty=")
-            .append(difficulty)
-            .append('}')
-            .append(gameOver ? " Game Over " : " Game not over ")
-            .append(" Playername: ")
-            .append(playerName)
-            .append(" Score: ")
-            .append(scoreValue)
-            .append(" Moves: " + moves)
-            .append(" Time: " + (System.currentTimeMillis() - initTime) / 1000);
+                .append("    }")
+                .append("\n, difficulty=")
+                .append(difficulty)
+                .append('}')
+                .append(gameOver ? " Game Over " : " Game not over ")
+                .append(" Playername: ")
+                .append(playerName)
+                .append(" Score: ")
+                .append(scoreValue)
+                .append(" Moves: " + moves)
+                .append(" Time: " + (System.currentTimeMillis() - initTime) / 1000);
         return sb.toString();
     }
 
@@ -176,14 +177,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy... also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-            { -1, -1 },
-            { -1, 0 },
-            { -1, 1 },
-            { 0, -1 },
-            { 0, 1 },
-            { 1, -1 },
-            { 1, 0 },
-            { 1, 1 }
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -225,14 +226,14 @@ public class Game implements debug, gameplay {
         // This could be done dynamically, but I'm lazy, and also it's faster, at the end the compiler will do the
         // same thing
         final int[][] offsets = {
-            { -1, -1 },
-            { -1, 0 },
-            { -1, 1 },
-            { 0, -1 },
-            { 0, 1 },
-            { 1, -1 },
-            { 1, 0 },
-            { 1, 1 }
+                {- 1, - 1},
+                {- 1, 0},
+                {- 1, 1},
+                {0, - 1},
+                {0, 1},
+                {1, - 1},
+                {1, 0},
+                {1, 1}
         };
 
         if (cell.getOffset() < offsets.length) {
@@ -250,8 +251,8 @@ public class Game implements debug, gameplay {
                     // Add the adjacent cell to the list of adjacent cells
                     adjacentMines.add(getCell(x, y));
                     LOGGER.debug(
-                        "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
-                    );
+                            "Cell: " + x + " - " + y + " - " + getCell(x, y) + " - " + getCell(x, y).getStateSelf()
+                                );
                 }
             } catch (Exception IndexOutOfBoundsException) {
                 LOGGER.error("Error: " + IndexOutOfBoundsException.getMessage());
@@ -274,15 +275,15 @@ public class Game implements debug, gameplay {
     public void uncoverCell(Cell cell) {
         cell.setStateCanvas(StateCanvas.REVEALED);
         LOGGER.debug(
-            "Cell: " +
-            cell.getRow() +
-            " - " +
-            cell.getColumn() +
-            " - " +
-            cell.getStateSelf() +
-            " - " +
-            cell.getStateCanvas()
-        );
+                "Cell: " +
+                        cell.getRow() +
+                        " - " +
+                        cell.getColumn() +
+                        " - " +
+                        cell.getStateSelf() +
+                        " - " +
+                        cell.getStateCanvas()
+                    );
     }
 
     public void uncoverAllCells() {
@@ -297,6 +298,7 @@ public class Game implements debug, gameplay {
     public void uncoverClickedCell(Cell cell) {
         if (moves == 0 && cell.getStateSelf() == StateSelf.MINE) {
             firstMoveCannotBeLoose(cell);
+            uncoverClickedCell(cell);
         } else if (cell.getStateSelf() == StateSelf.MINE) {
             uncoverAllCells();
             setGameOver(true);
@@ -332,12 +334,12 @@ public class Game implements debug, gameplay {
 
         // If the random cell is not a mine, set it as a mine
         if (
-            getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                .getStateSelf() !=
-            StateSelf.MINE
+                getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
+                        .getStateSelf() !=
+                        StateSelf.MINE
         ) {
             getCell((int) (Math.random() * difficulty.getRows()), (int) (Math.random() * difficulty.getColumns()))
-                .setStateSelf(StateSelf.MINE);
+                    .setStateSelf(StateSelf.MINE);
         }
     }
 

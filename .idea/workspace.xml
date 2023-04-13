@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
@@ -7,122 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list
-            default="true"
-            id="dd09fd7f-0412-49f0-adc8-207bac2022e0"
-            name="Changes"
-            comment="BUG - Now pressed cells are lighter to enhance the gameplay."
-        >
-      <change
-                beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/.idea/misc.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/misc.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/.idea/workspace.xml"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.idea/workspace.xml"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/.prettierrc.json"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/.prettierrc.json"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/README.assets/UML.svg"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/README.assets/UML.svg"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/README.md"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/README.md"
-                afterDir="false"
-            />
-      <change beforePath="$PROJECT_DIR$/UML.svg" beforeDir="false" afterPath="$PROJECT_DIR$/UML.svg" afterDir="false" />
-      <change
-                beforePath="$PROJECT_DIR$/identifier.sqlite"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/identifier.sqlite"
-                afterDir="false"
-            />
+    <list default="true" id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="BUG - Now pressed cells are lighter to enhance the gameplay.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/SQL/SQLDriver.java"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Cell.java"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/gameOver.html"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/gameOver.html"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/index.html"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/index.html"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/newUI/board.html"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/newUI/board.html"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/newUI/newUI.css"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/newUI/newUI.css"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/style.css"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/style.css"
-                afterDir="false"
-            />
-      <change
-                beforePath="$PROJECT_DIR$/src/main/resources/static/win.html"
-                beforeDir="false"
-                afterPath="$PROJECT_DIR$/src/main/resources/static/win.html"
-                afterDir="false"
-            />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daw/pr/minesweeper/struct/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <list id="9315a1a7-14cf-4c56-852e-61c38b59fc51" name="generateScore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,10 +50,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting
-            file="jar://$USER_HOME$/.jdks/temurin-17.0.6/lib/src.zip!/java.base/java/lang/NoSuchFieldError.java"
-            root0="SKIP_INSPECTION"
-        />
+    <setting file="jar://$USER_HOME$/.jdks/temurin-17.0.6/lib/src.zip!/java.base/java/lang/NoSuchFieldError.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="pg7vpxoc" />
@@ -268,15 +158,12 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Spring Boot.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="daw.pr.minesweeper.App" />
       <module name="minesweeper" />
       <option name="PROGRAM_PARAMETERS" value="-d" />
-      <projectPathOnTarget
-                name="projectPathOnTarget"
-                value="/mnt/c/Users/seoan/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.8109.175/jbr/bin /minesweeper"
-            />
+      <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/Users/seoan/AppData/Local/JetBrains/Toolbox/apps/IDEA-U/ch-0/231.8109.175/jbr/bin /minesweeper" />
       <target name="@@@LOCAL@@@" />
       <extension name="coverage">
         <pattern>
@@ -301,25 +188,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration
-            name="App"
-            type="SpringBootApplicationConfigurationType"
-            factoryName="Spring Boot"
-            nameIsGenerated="true"
-        >
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="minesweeper" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.App" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration
-            name="MinesweeperApplication"
-            type="SpringBootApplicationConfigurationType"
-            factoryName="Spring Boot"
-            temporary="true"
-            nameIsGenerated="true"
-        >
+    <configuration name="MinesweeperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="minesweeper" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="daw.pr.minesweeper.MinesweeperApplication" />
       <extension name="coverage">
@@ -332,13 +208,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration
-            name="Dockerfile"
-            type="docker-deploy"
-            factoryName="dockerfile"
-            temporary="true"
-            server-name="docker-default"
-        >
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="docker-default">
       <deployment type="dockerfile">
         <settings>
           <option name="buildOnly" value="true" />
@@ -359,13 +229,7 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration
-            name="minesweeper-image:latest"
-            type="docker-deploy"
-            factoryName="docker-image"
-            temporary="true"
-            server-name="docker-default"
-        >
+    <configuration name="minesweeper-image:latest" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="docker-default">
       <deployment type="docker-image">
         <settings>
           <option name="imageTag" value="minesweeper-image:latest" />
@@ -393,15 +257,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component
-        name="SpellCheckerSettings"
-        RuntimeDictionaries="0"
-        Folders="0"
-        CustomDictionaries="0"
-        DefaultDictionary="application-level"
-        UseSingleDictionary="true"
-        transferred="true"
-    />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dd09fd7f-0412-49f0-adc8-207bac2022e0" name="Changes" comment="" />
@@ -457,6 +313,8 @@
       <workItem from="1681053230811" duration="25000" />
       <workItem from="1681060560464" duration="843000" />
       <workItem from="1681064290675" duration="474000" />
+      <workItem from="1681193926538" duration="3895000" />
+      <workItem from="1681366451143" duration="2135000" />
     </task>
     <task id="LOCAL-00015" summary="Basic POO(1..*) cell structure implemented.">
       <created>1679939157230</created>
